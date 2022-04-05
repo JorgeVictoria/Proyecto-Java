@@ -1,0 +1,91 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="92911300-A164-2496-0494-95091B50A577" name="Detalle">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>B2C9E58D-543C-6A78-E059-D769D5BD72D5</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDDetalle" id="02690CD7-D326-CA1A-CD19-C2B4C83CDB96">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>413235FB-4F7E-5DC4-6755-5E0E1CF23194</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cantidad" id="EB4D4C0D-B26E-8EB2-3476-3FF2AEA6E6D8">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>A548FFCA-5FB7-AC27-3CF9-E67F734B5FE7</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Precio" id="FBC5D745-C2BC-2F14-1AB8-2CBAC3C7F328">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>DCCE3A73-C119-83D3-DACA-07312DA22796</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Material_IDMaterial" id="F99A4BAA-8FFC-EC93-01CD-DD31C17C366D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>4371D638-6B15-BEA9-0461-9D44ED10F35A</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="497CD721-3340-7E39-17ED-4481B7A36634" referredColumn="DF223FF8-BBE1-024E-8053-A5D99D05BB38"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="725F5EF6-3AAB-1EE3-1DB3-37A03E43EBED" name="Detalle_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>57E5D359-2979-119A-93BF-ADFFA35C0302</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="02690CD7-D326-CA1A-CD19-C2B4C83CDB96"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BC3A4D7E-B1C8-96B5-5763-3B0F1EF5ECA5" name="Relation_4">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>F3189632-0460-9FB1-59CF-8AAA520CC56E</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F99A4BAA-8FFC-EC93-01CD-DD31C17C366D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

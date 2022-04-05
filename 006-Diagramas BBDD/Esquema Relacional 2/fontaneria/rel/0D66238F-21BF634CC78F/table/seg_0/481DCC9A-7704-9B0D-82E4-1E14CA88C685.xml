@@ -1,0 +1,152 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="481DCC9A-7704-9B0D-82E4-1E14CA88C685" name="Cliente">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>D4A71DDE-66E4-ACFE-AE57-B1CCDE20332B</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCliente" id="B9FA2130-E842-0A60-164F-098B09284CC5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>97703E3A-B33F-7B32-DCE9-3028B7532A38</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipo" id="1090248F-DE2E-F30B-44EC-838F17198F44">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>6BEE543F-6986-65F2-287A-5D7A7B362047</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="Empresa" description=""/>
+<valueDef value="Persona" description=""/>
+</listOfValues>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DNI/NIF" id="B24C1A90-C03D-ECAD-CA99-68ED39110845">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>B9CA6B53-D354-3ABD-A509-408DAD9F297F</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="E6AB0E38-4E2C-EEA8-2ECE-0DB063FD3580">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>EB2F6904-91AA-B495-B530-C34C211D3F5D</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido1" id="CCC2A753-3158-AB2D-121F-A19614EC0F6F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>26066276-6A09-EA1F-FFE5-D43BC2403586</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Apellido2" id="E013FDD6-E0C7-1E67-D3A4-7D4BDC285E3A">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>81279CEB-CD41-702E-455D-3A16304FD0A1</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Direccion" id="0F6BDBBB-588D-3863-CBDE-A72E86D4CBDF">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>861DEEF0-2FA7-476D-D66E-C16B7DBDC1B5</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CodigoPostal" id="9D994FAD-67F7-7BE6-F3F9-DD8D35E0FE8D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>713D9151-DE1B-4B37-998E-82BE6FB8ACE3</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Localidad" id="CEC71C1B-9163-E0D3-3255-3799B4DE8D42">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>86F2CD19-E60F-6444-3A9B-74DBB5DD0BA8</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Telefono" id="F8698556-1C15-F194-7A71-EEB89A702F3F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>5D5358FC-B134-05BF-FE32-04A1B843F708</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CAA470C-3847-AD0F-0577-66BD148B8F8E" name="Cliente_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>C7A72C78-098D-17E6-1693-8DC577CAA7AA</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B9FA2130-E842-0A60-164F-098B09284CC5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

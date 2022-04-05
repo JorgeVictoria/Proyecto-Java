@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Documentos_Detalle" directorySegmentName="seg_0" id="CB23DF82-72CB-4602-9E70-B156D69E7463">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:45:40 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<sourcePk>C458F9F5-AE3A-AFFA-FA83-2305895F0044</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>1FFC1A45-3AE7-60FA-0EEA-CDE6E9B9FA5F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B2C9E58D-543C-6A78-E059-D769D5BD72D5</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

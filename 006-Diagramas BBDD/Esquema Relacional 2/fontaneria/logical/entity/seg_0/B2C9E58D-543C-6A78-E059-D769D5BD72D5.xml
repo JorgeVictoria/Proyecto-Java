@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B2C9E58D-543C-6A78-E059-D769D5BD72D5" name="Detalle">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:36:51 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDDetalle" id="413235FB-4F7E-5DC4-6755-5E0E1CF23194">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:37:03 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Cantidad" id="A548FFCA-5FB7-AC27-3CF9-E67F734B5FE7">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:37:49 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Precio" id="DCCE3A73-C119-83D3-DACA-07312DA22796">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:38:19 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDMaterial" id="4371D638-6B15-BEA9-0461-9D44ED10F35A">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:48:49 UTC</createdTime>
+<generatorID>F3189632-0460-9FB1-59CF-8AAA520CC56E</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>3B6112CA-3FF2-D1F0-AFED-1F2C96F0289B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="57E5D359-2979-119A-93BF-ADFFA35C0302" name="Detalle PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:37:39 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>413235FB-4F7E-5DC4-6755-5E0E1CF23194</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

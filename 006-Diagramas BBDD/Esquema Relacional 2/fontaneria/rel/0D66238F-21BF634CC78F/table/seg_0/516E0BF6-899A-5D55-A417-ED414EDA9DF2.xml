@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="516E0BF6-899A-5D55-A417-ED414EDA9DF2" name="Documentos">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>1FFC1A45-3AE7-60FA-0EEA-CDE6E9B9FA5F</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDDocumento" id="022E9508-A531-5A4E-F3A7-4116655441A5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>4539B951-2F54-E2D7-986D-8825C5228D5D</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipo" id="B36197DF-A133-AFB7-168F-5257B58581FF">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>5328C946-78C9-71F1-A8E1-6FDC1BDBA5AA</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="Albaran" description=""/>
+<valueDef value="Factura" description=""/>
+<valueDef value="Presupuesto" description=""/>
+</listOfValues>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha" id="457AB546-1248-AD99-D16C-19FD5866825D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>53B252D2-1C52-867E-DB21-C97DBA5C11F8</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IVA" id="1EABC463-EE3D-37F8-D3AB-25B9F8585471">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>8CBC3D11-F1AC-16D7-21A5-9806B7EDD47D</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="iImporteInicial" id="D54E8A88-A620-3BF0-AE6B-A3A628F17996">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>9E3422B6-8CA5-AC86-356F-3B68FBBF218A</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="iImporteIVA" id="10E4E4ED-248E-8419-410D-524BC568EAC0">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>3D4A69F5-B925-0E3B-43F6-52B46638D901</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="iImporteFinal" id="A7888F71-56CE-E959-B902-FC50162EDF95">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>787CAE4E-800D-34BD-9A07-D70307330E1B</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_IDCliente" id="80740DD9-AE69-F2F9-404E-66DC4BF940F5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>C62301BC-2663-4CD3-AE65-EFFA4C36AB23</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9E98AA17-EA31-BEF1-BD80-6D375E6D57F2" referredColumn="B9FA2130-E842-0A60-164F-098B09284CC5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E2031A56-1235-96BB-D828-44FE4758D64F" name="Documentos_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>C458F9F5-AE3A-AFFA-FA83-2305895F0044</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="022E9508-A531-5A4E-F3A7-4116655441A5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A0E7753D-61C8-9E91-8E13-BDA39BC22527" name="Cliente_Documentos">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>4FCEEE33-D500-8076-4303-A0E4453238F5</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="80740DD9-AE69-F2F9-404E-66DC4BF940F5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

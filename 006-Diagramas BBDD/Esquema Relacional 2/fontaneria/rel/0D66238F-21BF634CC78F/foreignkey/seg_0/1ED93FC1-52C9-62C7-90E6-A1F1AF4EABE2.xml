@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1ED93FC1-52C9-62C7-90E6-A1F1AF4EABE2" containerWithKeyObject="B8F9246B-7E6D-7749-CF3E-7D89B676464C" localFKIndex="48BEE982-9F2C-AD84-241C-F2AD8BFC192D" name="Documentos_Detalle_Detalle_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>CB23DF82-72CB-4602-9E70-B156D69E7463</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<referredTableLongName>Detalle</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>92911300-A164-2496-0494-95091B50A577</referredTableID>
+<keyObject>725F5EF6-3AAB-1EE3-1DB3-37A03E43EBED</keyObject>
+<referredKeyID>725F5EF6-3AAB-1EE3-1DB3-37A03E43EBED</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>IDDetalle</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="D4A71DDE-66E4-ACFE-AE57-B1CCDE20332B" name="Cliente">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:08:46 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDCliente" id="97703E3A-B33F-7B32-DCE9-3028B7532A38">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:10:21 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Tipo" id="6BEE543F-6986-65F2-287A-5D7A7B362047">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:11:33 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="Empresa" description=""/>
+<valueDef value="Persona" description=""/>
+</listOfValues>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DNI/NIF" id="B9CA6B53-D354-3ABD-A509-408DAD9F297F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:13:04 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Nombre" id="EB2F6904-91AA-B495-B530-C34C211D3F5D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:13:49 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido1" id="26066276-6A09-EA1F-FFE5-D43BC2403586">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:14:17 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Apellido2" id="81279CEB-CD41-702E-455D-3A16304FD0A1">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:14:55 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Direccion" id="861DEEF0-2FA7-476D-D66E-C16B7DBDC1B5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:15:21 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="CodigoPostal" id="713D9151-DE1B-4B37-998E-82BE6FB8ACE3">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:15:39 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5 CHAR</dataTypeSize>
+<ownDataTypeParameters>5 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Localidad" id="86F2CD19-E60F-6444-3A9B-74DBB5DD0BA8">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:16:05 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Telefono" id="5D5358FC-B134-05BF-FE32-04A1B843F708">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:16:26 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C7A72C78-098D-17E6-1693-8DC577CAA7AA" name="Cliente PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:11:18 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>97703E3A-B33F-7B32-DCE9-3028B7532A38</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

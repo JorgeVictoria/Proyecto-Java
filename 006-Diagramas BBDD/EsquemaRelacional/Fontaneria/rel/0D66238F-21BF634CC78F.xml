@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<relationalModel class="oracle.dbtools.crest.model.design.relational.RelationalDesign" name="Relational_1" id="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" mainViewID="745C2889-CC95-04B1-F339-906B379F2B06">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:03:08 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+<selectedRDBMSSite>32076570-2523-435C-2E92-BF29817DFF70</selectedRDBMSSite>
+</relationalModel>

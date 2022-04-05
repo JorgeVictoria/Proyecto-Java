@@ -1,0 +1,77 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="B8F9246B-7E6D-7749-CF3E-7D89B676464C" name="Documentos_Detalle">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Documentos_IDDocumento" id="4C8801CE-2721-7CB2-D655-758D8EA9025A">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F5A5DCA3-C44A-DBF1-3317-7B3F978481E0" referredColumn="022E9508-A531-5A4E-F3A7-4116655441A5"/>
+</associations>
+</Column>
+<Column name="Detalle_IDDetalle" id="024CD478-4236-533B-8C03-2F481405D0F8">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1ED93FC1-52C9-62C7-90E6-A1F1AF4EABE2" referredColumn="02690CD7-D326-CA1A-CD19-C2B4C83CDB96"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A179BD65-AB08-55D3-9B5A-EAC41C962BCA" name="Documentos_Detalle_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<ownerDesignName>fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C8801CE-2721-7CB2-D655-758D8EA9025A"/>
+<colUsage columnID="024CD478-4236-533B-8C03-2F481405D0F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2F697C57-9C2F-4B39-E1B4-266DD2B9F274" name="Documentos_Detalle_Documentos_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>CB23DF82-72CB-4602-9E70-B156D69E7463</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C8801CE-2721-7CB2-D655-758D8EA9025A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="48BEE982-9F2C-AD84-241C-F2AD8BFC192D" name="Documentos_Detalle_Detalle_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:54:32 UTC</createdTime>
+<generatorID>CB23DF82-72CB-4602-9E70-B156D69E7463</generatorID>
+<ownerDesignName>fontaneria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="024CD478-4236-533B-8C03-2F481405D0F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

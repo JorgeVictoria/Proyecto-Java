@@ -1,0 +1,76 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Cliente" directorySegmentName="seg_0" id="68B1C165-292A-2E2D-D04F-E3AFEEE9B907">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Apellido1" id="0D7021B8-7829-702D-EB05-279D606AECE4">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Correo" id="1137063E-5B88-43D2-A297-C50D510EDE75">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Apellido2" id="29E34998-5792-6E11-7F44-78E4D80DAF1D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CodigoPostal" id="4226A385-DD93-A7A9-AA27-017F1BC3112B">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Nombre" id="70F6C14F-9F69-6869-50D5-B9ED22BB2DB0">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DNI" id="87F2C353-AA27-6EC8-FDA5-36130DFDFD0D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Localidad" id="9CEA39E6-803D-B995-D934-86E26332031E">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IDCliente" id="AD71B111-8895-7299-F0D3-F4ECF5FFB9C3">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Provincia" id="ADFB199F-C753-8876-97CD-B463919DE553">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Direccion" id="BB82450F-D512-0526-44C4-B935BE013061">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Telefono" id="D6A31847-4D87-2E87-7428-DE39CEFCCE99">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Cliente_PK" id="F068EC3A-BD19-A24E-B11F-FB1A5FAF5594">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

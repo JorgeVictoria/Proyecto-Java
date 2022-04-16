@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1FFC1A45-3AE7-60FA-0EEA-CDE6E9B9FA5F" name="Documentos">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1FFC1A45-3AE7-60FA-0EEA-CDE6E9B9FA5F" name="Presupuesto">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:18:16 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IDDocumento" id="4539B951-2F54-E2D7-986D-8825C5228D5D">
+<Attribute name="IDPresupuesto" id="4539B951-2F54-E2D7-986D-8825C5228D5D">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:31:32 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -28,22 +28,32 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Tipo" id="5328C946-78C9-71F1-A8E1-6FDC1BDBA5AA">
+<Attribute name="NumAlbaran" id="FA17EAC5-F553-FD30-75BE-B1C6F8D8F62F">
 <createdBy>jvand</createdBy>
-<createdTime>2022-04-05 18:32:04 UTC</createdTime>
+<createdTime>2022-04-15 16:37:42 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
 <engineerTo>
 <item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20 CHAR</dataTypeSize>
-<listOfValues>
-<valueDef value="Albaran" description=""/>
-<valueDef value="Factura" description=""/>
-<valueDef value="Presupuesto" description=""/>
-</listOfValues>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="NumFactura" id="111967E8-CB63-21B6-10A7-07672F8F505E">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:37:42 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
 <ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Fecha" id="53B252D2-1C52-867E-DB21-C97DBA5C11F8">
@@ -58,7 +68,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="IVA" id="8CBC3D11-F1AC-16D7-21A5-9806B7EDD47D">
+<Attribute name="TasaIVA" id="8CBC3D11-F1AC-16D7-21A5-9806B7EDD47D">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:34:10 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -71,7 +81,7 @@
 <dataTypePrecision>2</dataTypePrecision>
 <ownDataTypeParameters>,2,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="iImporteInicial" id="9E3422B6-8CA5-AC86-356F-3B68FBBF218A">
+<Attribute name="BaseImponible" id="9E3422B6-8CA5-AC86-356F-3B68FBBF218A">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:34:28 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -85,7 +95,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="iImporteIVA" id="3D4A69F5-B925-0E3B-43F6-52B46638D901">
+<Attribute name="ImporteIVA" id="3D4A69F5-B925-0E3B-43F6-52B46638D901">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:34:55 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -99,7 +109,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="iImporteFinal" id="787CAE4E-800D-34BD-9A07-D70307330E1B">
+<Attribute name="Total" id="787CAE4E-800D-34BD-9A07-D70307330E1B">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:35:09 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -113,20 +123,20 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="IDCliente" id="C62301BC-2663-4CD3-AE65-EFFA4C36AB23">
+<Attribute name="DNI" id="172C6521-4DEB-DF52-BDE9-60674AFFA89A">
 <createdBy>jvand</createdBy>
-<createdTime>2022-04-05 18:43:26 UTC</createdTime>
+<createdTime>2022-04-15 16:04:31 UTC</createdTime>
 <generatorID>4FCEEE33-D500-8076-4303-A0E4453238F5</generatorID>
 <ownerDesignName>Fontaneria</ownerDesignName>
 <engineerTo>
 <item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
-<referedAttribute>97703E3A-B33F-7B32-DCE9-3028B7532A38</referedAttribute>
+<referedAttribute>B9CA6B53-D354-3ABD-A509-408DAD9F297F</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10 CHAR</dataTypeSize>
+<dataTypeSize>9 CHAR</dataTypeSize>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -135,8 +145,9 @@
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:31:58 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

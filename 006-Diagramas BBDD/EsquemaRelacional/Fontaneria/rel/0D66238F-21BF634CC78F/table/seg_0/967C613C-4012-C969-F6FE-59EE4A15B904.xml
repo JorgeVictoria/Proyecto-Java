@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="967C613C-4012-C969-F6FE-59EE4A15B904" name="Presupuesto">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>1FFC1A45-3AE7-60FA-0EEA-CDE6E9B9FA5F</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDPresupuesto" id="1D96AB59-D30D-23B5-5ED6-F0D7F503AA8C">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>4539B951-2F54-E2D7-986D-8825C5228D5D</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumAlbaran" id="81B4F983-6D46-6E28-A1CF-EBD8405B2CC5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>FA17EAC5-F553-FD30-75BE-B1C6F8D8F62F</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NumFactura" id="99BEC236-D49F-CD3A-30F0-9D04342A55FC">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>111967E8-CB63-21B6-10A7-07672F8F505E</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Fecha" id="6D4D7F0D-E012-E73A-F551-B4364F884FB4">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>53B252D2-1C52-867E-DB21-C97DBA5C11F8</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TasaIVA" id="461B8CCF-AB94-0E0F-6E70-F12240F811FC">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>8CBC3D11-F1AC-16D7-21A5-9806B7EDD47D</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BaseImponible" id="A4E3361E-A793-6522-4047-8B103E7BCF62">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>9E3422B6-8CA5-AC86-356F-3B68FBBF218A</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ImporteIVA" id="00449358-E8C6-8229-1E1D-01532B9B414E">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>3D4A69F5-B925-0E3B-43F6-52B46638D901</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Total" id="B8B17B1E-9B3B-7999-9E09-23B5C6E528B8">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>787CAE4E-800D-34BD-9A07-D70307330E1B</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Cliente_DNI" id="F2CBFB6C-2170-62DE-DD88-5A1443037DB3">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>172C6521-4DEB-DF52-BDE9-60674AFFA89A</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C276D7FE-C223-171F-A46E-5D5C1C1D9772" referredColumn="87F2C353-AA27-6EC8-FDA5-36130DFDFD0D"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="103E167A-C92D-86A4-E044-531EB7C10BE9" name="Presupuesto_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>C458F9F5-AE3A-AFFA-FA83-2305895F0044</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D96AB59-D30D-23B5-5ED6-F0D7F503AA8C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CD24B5BB-1702-449E-3391-0E5732012615" name="Presupuesto_Cliente_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>4FCEEE33-D500-8076-4303-A0E4453238F5</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F2CBFB6C-2170-62DE-DD88-5A1443037DB3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

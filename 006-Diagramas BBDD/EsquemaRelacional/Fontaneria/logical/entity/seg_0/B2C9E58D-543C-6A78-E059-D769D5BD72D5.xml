@@ -28,6 +28,19 @@
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Descripcion" id="071AE54E-F7E2-B88D-EFB6-8ED763D43726">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:37:01 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Cantidad" id="A548FFCA-5FB7-AC27-3CF9-E67F734B5FE7">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:37:49 UTC</createdTime>
@@ -41,7 +54,21 @@
 <dataTypePrecision>6</dataTypePrecision>
 <ownDataTypeParameters>,6,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="Precio" id="DCCE3A73-C119-83D3-DACA-07312DA22796">
+<Attribute name="PrecioUnitario" id="1EE15C4A-7002-6E86-EAE3-E758420B8412">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:37:53 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Importe" id="DCCE3A73-C119-83D3-DACA-07312DA22796">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:38:19 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
@@ -77,8 +104,9 @@
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:37:39 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

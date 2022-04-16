@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BC1B7F3A-5AD0-FA81-0DE6-24A8189DBF0F" containerWithKeyObject="0AE65E8B-0BA8-78A5-E25F-9CE8BDA20CA7" localFKIndex="17471CC2-EBAB-3B95-31A7-7F2915A98FCC" name="Detalle_Material_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>F3189632-0460-9FB1-59CF-8AAA520CC56E</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<referredTableLongName>Material</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1AC2BD2E-FD8D-F400-D352-3FFC49F294D6</referredTableID>
+<keyObject>0F84CCE6-FAB7-AAB9-4C64-B81CE3D02D40</keyObject>
+<referredKeyID>0F84CCE6-FAB7-AAB9-4C64-B81CE3D02D40</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>IDMaterial</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

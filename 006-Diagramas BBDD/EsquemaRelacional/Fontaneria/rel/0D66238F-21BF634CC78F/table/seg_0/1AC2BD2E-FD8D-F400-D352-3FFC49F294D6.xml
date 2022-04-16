@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1AC2BD2E-FD8D-F400-D352-3FFC49F294D6" name="Material">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>BF6ACEA5-12C3-1D09-1AA4-3221578D1161</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDMaterial" id="F3B43766-8F5F-8760-A421-496862F18BAE">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>3B6112CA-3FF2-D1F0-AFED-1F2C96F0289B</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10 CHAR</dataTypeSize>
+<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Categoria" id="F211EACE-BE3C-AB8B-6816-800A1DE62228">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>E5B60BB8-D88D-5830-59D5-DCB6C91FBDAA</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Nombre" id="C0ECDE09-2324-E01E-4AC4-EB16FBA86798">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>123C827D-3A80-2AE8-31C8-E5992BF143FB</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Descripicion" id="0ACAE355-A54A-16CD-ED8D-E9E71375151F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>F32273F5-39A2-5B94-5B86-103DABEEADE1</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PrecioCoste" id="959889C7-BA39-65B0-FBF6-70296BD9DA3D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>43B7CDE1-7626-4EC0-384A-DEC5AF03D47F</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Incremento" id="EDCF581C-5CC6-35AB-2D26-97538F445CA0">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>25CD26C3-B099-7225-9322-834FBB6DC25C</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PrecioUnitario" id="86D24286-60A4-1D72-3369-304062797A2C">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>51AB19DE-CB5E-C66E-CD9D-14689C493802</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="0F84CCE6-FAB7-AAB9-4C64-B81CE3D02D40" name="Material_PK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>ACC1D216-7057-3343-8021-99CBB071B2C6</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F3B43766-8F5F-8760-A421-496862F18BAE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -95,7 +95,7 @@
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
 </Attribute>
-<Attribute name="PrecioTotal" id="51AB19DE-CB5E-C66E-CD9D-14689C493802">
+<Attribute name="PrecioUnitario" id="51AB19DE-CB5E-C66E-CD9D-14689C493802">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:28:39 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>

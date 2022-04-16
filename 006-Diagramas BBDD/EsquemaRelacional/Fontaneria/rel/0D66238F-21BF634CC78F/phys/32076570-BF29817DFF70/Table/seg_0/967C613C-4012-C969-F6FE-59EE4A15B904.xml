@@ -1,0 +1,73 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Presupuesto" directorySegmentName="seg_0" id="967C613C-4012-C969-F6FE-59EE4A15B904">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="ImporteIVA" id="00449358-E8C6-8229-1E1D-01532B9B414E">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IDPresupuesto" id="1D96AB59-D30D-23B5-5ED6-F0D7F503AA8C">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TasaIVA" id="461B8CCF-AB94-0E0F-6E70-F12240F811FC">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Fecha" id="6D4D7F0D-E012-E73A-F551-B4364F884FB4">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NumAlbaran" id="81B4F983-6D46-6E28-A1CF-EBD8405B2CC5">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NumFactura" id="99BEC236-D49F-CD3A-30F0-9D04342A55FC">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="BaseImponible" id="A4E3361E-A793-6522-4047-8B103E7BCF62">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Total" id="B8B17B1E-9B3B-7999-9E09-23B5C6E528B8">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Cliente_DNI" id="F2CBFB6C-2170-62DE-DD88-5A1443037DB3">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="Presupuesto_Cliente_FK" id="CD24B5BB-1702-449E-3391-0E5732012615">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Presupuesto_PK" id="103E167A-C92D-86A4-E044-531EB7C10BE9">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

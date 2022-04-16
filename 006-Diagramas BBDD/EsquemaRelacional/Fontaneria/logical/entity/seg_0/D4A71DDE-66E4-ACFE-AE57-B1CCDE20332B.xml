@@ -15,6 +15,19 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="DNI" id="B9CA6B53-D354-3ABD-A509-408DAD9F297F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-05 18:13:04 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>9 CHAR</dataTypeSize>
+<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="IDCliente" id="97703E3A-B33F-7B32-DCE9-3028B7532A38">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:10:21 UTC</createdTime>
@@ -27,36 +40,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>10 CHAR</dataTypeSize>
 <ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="Tipo" id="6BEE543F-6986-65F2-287A-5D7A7B362047">
-<createdBy>jvand</createdBy>
-<createdTime>2022-04-05 18:11:33 UTC</createdTime>
-<ownerDesignName>Fontaneria</ownerDesignName>
-<engineerTo>
-<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>10 CHAR</dataTypeSize>
-<listOfValues>
-<valueDef value="Empresa" description=""/>
-<valueDef value="Persona" description=""/>
-</listOfValues>
-<ownDataTypeParameters>10 CHAR,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="DNI/NIF" id="B9CA6B53-D354-3ABD-A509-408DAD9F297F">
-<createdBy>jvand</createdBy>
-<createdTime>2022-04-05 18:13:04 UTC</createdTime>
-<ownerDesignName>Fontaneria</ownerDesignName>
-<engineerTo>
-<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9 CHAR</dataTypeSize>
-<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="Nombre" id="EB2F6904-91AA-B495-B530-C34C211D3F5D">
 <createdBy>jvand</createdBy>
@@ -78,7 +61,6 @@
 <engineerTo>
 <item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -92,7 +74,6 @@
 <engineerTo>
 <item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -138,6 +119,19 @@
 <dataTypeSize>200 CHAR</dataTypeSize>
 <ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Provincia" id="2C5940D2-2BA8-6A14-F8E3-F6CFDBB104F1">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:01:19 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="Telefono" id="5D5358FC-B134-05BF-FE32-04A1B843F708">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:16:26 UTC</createdTime>
@@ -151,18 +145,32 @@
 <dataTypeSize>9 CHAR</dataTypeSize>
 <ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="Correo" id="24F6B97E-EB5A-01B7-6507-00D453A93065">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:01:21 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<engineerTo>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 CHAR</dataTypeSize>
+<ownDataTypeParameters>200 CHAR,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="C7A72C78-098D-17E6-1693-8DC577CAA7AA" name="Cliente PK">
 <createdBy>jvand</createdBy>
 <createdTime>2022-04-05 18:11:18 UTC</createdTime>
 <ownerDesignName>Fontaneria</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="true"/>
+<item key="0D66238F-7A68-DD3A-FDA7-21BF634CC78F" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>97703E3A-B33F-7B32-DCE9-3028B7532A38</attributeRef>
+<attributeRef>B9CA6B53-D354-3ABD-A509-408DAD9F297F</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

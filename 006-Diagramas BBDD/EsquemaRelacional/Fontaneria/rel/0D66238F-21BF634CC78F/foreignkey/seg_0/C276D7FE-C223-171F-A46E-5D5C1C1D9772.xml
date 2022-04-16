@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="C276D7FE-C223-171F-A46E-5D5C1C1D9772" containerWithKeyObject="967C613C-4012-C969-F6FE-59EE4A15B904" localFKIndex="CD24B5BB-1702-449E-3391-0E5732012615" name="Presupuesto_Cliente_FK">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-15 16:47:36 UTC</createdTime>
+<generatorID>4FCEEE33-D500-8076-4303-A0E4453238F5</generatorID>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<referredTableLongName>Cliente</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>68B1C165-292A-2E2D-D04F-E3AFEEE9B907</referredTableID>
+<keyObject>F068EC3A-BD19-A24E-B11F-FB1A5FAF5594</keyObject>
+<referredKeyID>F068EC3A-BD19-A24E-B11F-FB1A5FAF5594</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>DNI</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

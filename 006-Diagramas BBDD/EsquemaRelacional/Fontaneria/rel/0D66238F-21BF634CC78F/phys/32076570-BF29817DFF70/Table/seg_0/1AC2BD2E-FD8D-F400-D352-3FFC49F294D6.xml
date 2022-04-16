@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev11g class="oracle.dbtools.crest.model.design.storage.oracle.v11g.TableProxyOraclev11g" name="Material" directorySegmentName="seg_0" id="1AC2BD2E-FD8D-F400-D352-3FFC49F294D6">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="Descripicion" id="0ACAE355-A54A-16CD-ED8D-E9E71375151F">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PrecioUnitario" id="86D24286-60A4-1D72-3369-304062797A2C">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PrecioCoste" id="959889C7-BA39-65B0-FBF6-70296BD9DA3D">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Nombre" id="C0ECDE09-2324-E01E-4AC4-EB16FBA86798">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Incremento" id="EDCF581C-5CC6-35AB-2D26-97538F445CA0">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="Categoria" id="F211EACE-BE3C-AB8B-6816-800A1DE62228">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IDMaterial" id="F3B43766-8F5F-8760-A421-496862F18BAE">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="Material_PK" id="0F84CCE6-FAB7-AAB9-4C64-B81CE3D02D40">
+<createdBy>jvand</createdBy>
+<createdTime>2022-04-16 09:40:24 UTC</createdTime>
+<ownerDesignName>Fontaneria</ownerDesignName>
+<indexSort>SORTED</indexSort>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev11g>

@@ -21,7 +21,7 @@ CREATE TABLE cliente (
     Telefono VARCHAR(9) NOT NULL,
     CONSTRAINT cliente_pk PRIMARY KEY (DNI),
     CONSTRAINT cliente_doc UNIQUE (IDCliente)
-)
+);
 
 
 #creamos la tabla material
@@ -34,26 +34,26 @@ CREATE TABLE material (
     Incremento DECIMAL (10,2)NOT NULL,
     PrecioUnitario DECIMAL(10,2) NOT NULL,
     CONSTRAINT material_pk PRIMARY KEY (IDMaterial)
-)
+);
 
 
 #creamos la tabla detalle
 CREATE TABLE detalle (
     IDDetalle VARCHAR(10),
-    Material_IDMaterial VARCHAR(10),
+    Material_IDMaterial VARCHAR(10) NOT NULL,
     Descripcion VARCHAR(200),
     Cantidad INTEGER(6) NOT NULL,
     PrecioUnitario DECIMAL(10,2) NOT NULL,
     Importe DECIMAL(10,2) NOT NULL,
     CONSTRAINT detalle_pk PRIMARY KEY (IDDetalle),
     CONSTRAINT detalle_fk FOREIGN KEY (Material_IDMaterial) REFERENCES material (IDMaterial)
-)
+);
 
 
 #creamos la tabla presupuesto
 CREATE TABLE presupuesto (
     IDPresupuesto VARCHAR(10),
-    Cliente_DNI VARCHAR(10),
+    Cliente_DNI VARCHAR(10) NOT NULL,
     NumAlbaran VARCHAR(10),
     NumFactura VARCHAR(10),
     Fecha DATE NOT NULL,
@@ -61,9 +61,9 @@ CREATE TABLE presupuesto (
     BaseImponible DECIMAL(10,2) NOT NULL,
     ImporteIVA DECIMAL(10,2) NOT NULL,
     Total DECIMAL(10,2) NOT NULL,
-    CONSTRAINT documento_pk PRIMARY KEY (IDDocumento),
+    CONSTRAINT documento_pk PRIMARY KEY (IDPresupuesto),
     CONSTRAINT documento_fk FOREIGN KEY (Cliente_DNI) REFERENCES cliente (DNI)
-)
+);
 
 
 #creamos la tabla documento_detalle
@@ -71,9 +71,9 @@ CREATE TABLE documento_detalle (
     Presupuesto_IDPresupuesto VARCHAR(10),
     Detalle_IDDetalle VARCHAR(10),
     CONSTRAINT documento_detalle_pk PRIMARY KEY (Presupuesto_IDPresupuesto, Detalle_IDDetalle),
-    CONSTRAINT documento_detalle_fk1 FOREIGN KEY (Presupuesto_IDPresupuesto) REFERENCES documento (IDPresupuesto),
+    CONSTRAINT documento_detalle_fk1 FOREIGN KEY (Presupuesto_IDPresupuesto) REFERENCES presupuesto (IDPresupuesto),
     CONSTRAINT documento_detalle_fk2 FOREIGN KEY (Detalle_IDDetalle) REFERENCES detalle (IDDetalle)
-)
+);
 
 
 	

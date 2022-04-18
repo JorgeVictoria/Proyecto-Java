@@ -33,6 +33,7 @@ CREATE TABLE `cliente` (
   `Localidad` varchar(200) NOT NULL,
   `Provincia` varchar(100) NOT NULL,
   `Telefono` varchar(9) NOT NULL,
+  `Correo` varchar(200) NOT NULL,
   PRIMARY KEY (`DNI`),
   UNIQUE KEY `cliente_doc` (`IDCliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -171,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-18 12:21:04
+-- Dump completed on 2022-04-18 13:43:36

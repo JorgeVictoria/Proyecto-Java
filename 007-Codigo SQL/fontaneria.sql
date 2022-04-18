@@ -19,6 +19,7 @@ CREATE TABLE cliente (
     Localidad VARCHAR(200) NOT NULL,
     Provincia VARCHAR(100) NOT NULL,
     Telefono VARCHAR(9) NOT NULL,
+    Correo VARCHAR(200) NOT NULL,
     CONSTRAINT cliente_pk PRIMARY KEY (DNI),
     CONSTRAINT cliente_doc UNIQUE (IDCliente)
 );

@@ -22,15 +22,18 @@ public class App extends Application {
         stage.setScene(scene);
         stage.setTitle("VICTORIA FONTANERIA");
         Image image = new Image("file:iconoBarra.jpg");
-        stage.setResizable(true);
+        stage.setResizable(false);
         stage.getIcons().add(image);
         stage.show();
     }
 
     static void setRoot(String fxml) throws IOException {
     	scene.setRoot(loadFXML(fxml));
-    	scene.getWindow().setWidth(800);
-    	scene.getWindow().setHeight(600);
+   
+    	if(fxml.equals("PantallaMenu")) {
+    		scene.getWindow().setWidth(825);
+    		scene.getWindow().setHeight(675);
+    	}
     }
 
     private static Parent loadFXML(String fxml) throws IOException {

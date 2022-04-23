@@ -16,31 +16,31 @@
             <Image url="@../images/logo.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="128.0" layoutY="173.0" text="Usuario: ">
+      <Label layoutX="128.0" layoutY="173.0" styleClass="labelLogin" stylesheets="@estilos.css" text="Usuario: ">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="tfUsuario" layoutX="274.0" layoutY="169.0" prefHeight="35.0" prefWidth="191.0">
+      <TextField fx:id="tfUsuario" layoutX="274.0" layoutY="169.0" prefHeight="35.0" prefWidth="191.0" styleClass="tfLogin" stylesheets="@estilos.css">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
-      <Label layoutX="116.0" layoutY="225.0" text="Password: ">
+      <Label layoutX="116.0" layoutY="225.0" styleClass="labelLogin" stylesheets="@estilos.css" text="Password: ">
          <font>
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="266.0" layoutY="289.0" mnemonicParsing="false" onAction="#comprobarCredenciales" prefHeight="35.0" prefWidth="89.0" text="Login">
+      <Button fx:id="btnLogin" layoutX="266.0" layoutY="289.0" mnemonicParsing="false" onAction="#comprobarCredenciales" prefHeight="35.0" prefWidth="89.0" styleClass="btnLogin" stylesheets="@estilos.css" text="Login">
          <font>
             <Font name="Arial Bold" size="14.0" />
          </font>
       </Button>
-      <PasswordField fx:id="tfPassword" layoutX="274.0" layoutY="221.0" prefHeight="35.0" prefWidth="191.0">
+      <PasswordField fx:id="tfPassword" layoutX="274.0" layoutY="221.0" prefHeight="35.0" prefWidth="191.0" styleClass="tfLogin" stylesheets="@estilos.css">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </PasswordField>
-      <Label fx:id="lbWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="354.0" prefHeight="17.0" prefWidth="555.0" textAlignment="CENTER" textFill="#f50505" />
+      <Label fx:id="lbWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="354.0" prefHeight="17.0" prefWidth="555.0" styleClass="warningLogin" stylesheets="@estilos.css" textAlignment="CENTER" textFill="#f50505" />
    </children>
 </AnchorPane>

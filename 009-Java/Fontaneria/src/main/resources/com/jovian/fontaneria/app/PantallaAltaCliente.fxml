@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="100.0" prefWidth="100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovian.fontaneria.app.ControladorAltaCliente">
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" styleClass="AnchorPane" stylesheets="@estilos.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jovian.fontaneria.app.ControladorAltaCliente">
    <children>
-      <Button layoutX="24.0" layoutY="38.0" mnemonicParsing="false" text="Button" />
+      <ImageView fitHeight="111.0" fitWidth="301.0" layoutX="74.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="111.0" fitWidth="76.0" layoutX="792.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/altaCliente.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="894.0" layoutY="97.0" styleClass="lblAltaClientesHead" stylesheets="@estilos.css" text="ALTA CLIENTES" />
+      <AnchorPane layoutX="60.0" layoutY="168.0" prefHeight="406.0" prefWidth="1080.0" styleClass="AnchorPaneDatos" stylesheets="@estilos.css">
+         <children>
+            <Label layoutX="58.0" layoutY="54.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="DNI" />
+            <TextField layoutX="114.0" layoutY="51.0" prefHeight="33.0" prefWidth="203.0" styleClass="tfLogin" stylesheets="@estilos.css" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

@@ -31,16 +31,16 @@
             <Font name="Arial Bold" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="btnLogin" layoutX="266.0" layoutY="289.0" mnemonicParsing="false" onAction="#comprobarCredenciales" prefHeight="35.0" prefWidth="89.0" styleClass="btnLogin" stylesheets="@estilos.css" text="Login">
-         <font>
-            <Font name="Arial Bold" size="14.0" />
-         </font>
-      </Button>
       <PasswordField fx:id="tfPassword" layoutX="274.0" layoutY="221.0" prefHeight="35.0" prefWidth="191.0" styleClass="tfLogin" stylesheets="@estilos.css">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </PasswordField>
+      <Button fx:id="btnLogin" layoutX="266.0" layoutY="289.0" mnemonicParsing="false" onAction="#comprobarCredenciales" prefHeight="35.0" prefWidth="89.0" styleClass="btnLogin" stylesheets="@estilos.css" text="Login">
+         <font>
+            <Font name="Arial Bold" size="14.0" />
+         </font>
+      </Button>
       <Label fx:id="lbWarning" alignment="CENTER" contentDisplay="CENTER" layoutX="26.0" layoutY="354.0" prefHeight="17.0" prefWidth="555.0" styleClass="warningLogin" stylesheets="@estilos.css" textAlignment="CENTER" textFill="#f50505" />
    </children>
 </AnchorPane>

@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -107,7 +108,10 @@ public class ControladorMenu {
 		Stage stage = new Stage();
 		Parent root = FXMLLoader.load(nameClass.getResource(resource));
 		stage.setScene(new Scene(root));
-		stage.setTitle("modal Window");
+		stage.setTitle("VICTORIA FONTANERIA");
+        Image image = new Image("file:iconoBarra.jpg");
+        stage.setResizable(false);
+        stage.getIcons().add(image);
 		stage.initModality(Modality.WINDOW_MODAL);
 		stage.initOwner(((Node) event.getSource()).getScene().getWindow());
 		stage.show();

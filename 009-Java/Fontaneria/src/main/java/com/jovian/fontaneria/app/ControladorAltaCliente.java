@@ -77,20 +77,63 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		
 		//variables locales
 		boolean correcto = true;
-		String cadena = "";
 		
-		//inicialimos el mensaje de warnings cada vez que pulsamos click
+		//iniciamos los warning cada vez que pulsemos click
 		lblWarning.setText("");
 		
-		//comprobamos que el formato del DNI es correcto
-		correcto = Comprobable.comprobarFormatoDNI(tfDNI.getText());
-		if(!correcto) cadena = cadena + "El formato del DNI incorrecto.";
+		//mientras correcto sea true, iremos chequeando que los campos esten rellenados correctamente
+		while(correcto) {
+			
+			//comprobamos que el formato del DNI es correcto
+			correcto = Comprobable.comprobarFormatoDNI(tfDNI.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del DNI incorrecto.");
+				break;
+			}
+			
+			//comprobamos que la letra del dni es correcta
+			correcto = Comprobable.comprobarLetraDNI(tfDNI.getText());
+			if(!correcto) {
+				lblWarning.setText("La letra del DNI no es correcta");
+				break;
+			}
+			
+			//comprobamos que el campo nombre no esté vacio y tenga el formato correcto(solo letras)
+			tfNombreCliente.setText(tfNombreCliente.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfNombreCliente.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del nombre no es correcto");
+				break;
+			}
+			
+			//comprobamos que el campo apellido1 no esté vacio y tenga el formato correcto(solo letras)
+			tfApellido1.setText(tfApellido1.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfApellido1.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del primer apellido no es correcto");
+				break;
+			}
+			
+			//comprobamos que el campo apellido2 no esté vacio y tenga el formato correcto(solo letras)
+			tfApellido2.setText(tfApellido2.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfApellido2.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del segundo apellido no es correcto");
+				break;
+			}
+			
+			//comprobamos que el campo direccion no esté vacio y tenga el formato correcto(letras y numeros segun patron)
+			tfDireccion.setText(tfDireccion.getText().trim());
+			correcto = Comprobable.comprobarDireccion(tfDireccion.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato de la direccion no es correcto");
+				break;
+			}
+			
+			//si está todo correcto, rompemos el bucle
+			if(correcto) break;
+		}
 		
-		//comprobamos que la letra del dni es correcta
-		if(correcto) correcto = Comprobable.comprobarLetraDNI(tfDNI.getText());
-		if(!correcto) cadena = cadena + " La letra del DNI no es correcta";
-		
-		lblWarning.setText(cadena);
 	}
 
 	/**

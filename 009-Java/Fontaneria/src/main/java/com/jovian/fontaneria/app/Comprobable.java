@@ -7,6 +7,7 @@ public interface Comprobable {
 	
 	/**
 	 * metodo para comprobar que el DNI cumple con el formato correcto
+	 * @param tfDNI, dni del cliente
 	 * @return true or false, en funcion de si cumple o no el formato
 	 */
 	public static boolean comprobarFormatoDNI(String tfDNI){
@@ -24,6 +25,7 @@ public interface Comprobable {
 	
 	/**
 	 * metodo para comprobar que la letra del dni es correcta
+	 * @param tfDNI, dni del cliente
 	 * @return true or false, en funcion de si la letra coincide o no
 	 */
 	public static boolean comprobarLetraDNI(String tfDNI) {
@@ -48,6 +50,36 @@ public interface Comprobable {
 		if(letraDni.equals(letraResto)) return true;
 		else return false;
 		
+	}
+	
+
+	/**
+	 * metodo para ver si el nombre o los apellidos cumplen con el patrón
+	 * @param nombre, nombre o apellidos
+	 * @return true or false, en funcion de si se cumple el patrón
+	 */
+	public static boolean comprobarNombres(String nombre) {
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		Pattern patron = Pattern.compile("[ A-Za-zñÑáéíóúÁÉÍÓÚ]{3,50}");
+				
+		//comparamos el patron con la cadena recibida como parametro, que será un nombre o un apellido
+		Matcher comprobar = patron.matcher(nombre);
+				
+		//en funcion de la comparación se devolvera true or false
+		if (comprobar.matches()) return true;
+		else return false;
+	}
+
+	public static boolean comprobarDireccion(String direccion) {
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		Pattern patron = Pattern.compile("[ 0-9A-Za-zñÑáéíóúÁÉÍÓÚ,.ºª/-]{10,200}");
+						
+		//comparamos el patron con la cadena recibida como parametro, que será un nombre o un apellido
+		Matcher comprobar = patron.matcher(direccion);
+						
+		//en funcion de la comparación se devolvera true or false
+		if (comprobar.matches()) return true;
+		else return false;
 	}
 
 }

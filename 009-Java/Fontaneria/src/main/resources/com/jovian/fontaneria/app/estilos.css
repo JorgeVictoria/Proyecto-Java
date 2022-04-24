@@ -2,9 +2,9 @@
                 -fx-border-color: #013F78;
                 -fx-border-width: 5px;}
                 
-.AnchorPaneDatos {   -fx-background-color: #FFFAFA;
-                	 -fx-border-color: #013F78;
-                     -fx-border-width: 5px;}
+.AnchorPaneDatos {-fx-background-color: #FFFAFA;
+                  -fx-border-color: #013F78;
+                  -fx-border-width: 5px;}
                 
 .labelLogin { -fx-font-family: "Arial";
  	          -fx-font-size: 24px;
@@ -17,7 +17,8 @@
 .warningLogin { -fx-font-family: "Arial";
  	        	-fx-font-size: 12px;
  	        	-fx-font-weight: bold;
- 	        	-fx-text-fill: red;}
+ 	        	-fx-text-fill: red;
+ 	        	-fx-alignment: center}
  	        	
 .tfLogin { -fx-font-family: "Arial";
  	       -fx-font-size: 18px;
@@ -58,5 +59,12 @@
  	        			-fx-font-weight: bold;
  	        			-fx-text-fill: #013F78;}}
  	        			
-.
+.tfAltaClientes { -fx-font-family: "Arial";
+ 	       		  -fx-font-size: 16px;
+ 	              -fx-font-weight: bold;}
+ 	              
+.btnMenu { -fx-font-family: "Arial";
+ 	        -fx-font-size: 14px;
+ 	        -fx-font-weight: bold;
+ 	        -fx-text-fill: #013F78;}
 

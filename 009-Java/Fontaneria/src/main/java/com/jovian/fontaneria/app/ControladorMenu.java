@@ -13,6 +13,11 @@ import javafx.scene.image.Image;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * Metodo para controlar la apertura de escenas en función del botón pulsado
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class ControladorMenu {
 	
 	//variables elementos FXML

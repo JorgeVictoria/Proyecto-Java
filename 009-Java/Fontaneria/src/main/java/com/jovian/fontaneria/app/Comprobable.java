@@ -3,6 +3,12 @@ package com.jovian.fontaneria.app;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * interfaz para implementar diferentes metodos que nos permitiran 
+ * comprobar patrones en el formato de los diferentes campos de los formularios
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public interface Comprobable {
 	
 	/**
@@ -58,6 +64,7 @@ public interface Comprobable {
 	 * @return true or false, en funcion de si se cumple el patrón
 	 */
 	public static boolean comprobarNombres(String nombre) {
+		
 		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
 		Pattern patron = Pattern.compile("[ A-Za-zñÑáéíóúÁÉÍÓÚ]{3,50}");
 				
@@ -69,7 +76,13 @@ public interface Comprobable {
 		else return false;
 	}
 
+	/**
+	 * metodo para comprobar que el campo direccion cumple un patrón correcto
+	 * @param direccion, dirección del cliente
+	 * @return true or false, en funcion de si se cumple el patrón
+	 */
 	public static boolean comprobarDireccion(String direccion) {
+		
 		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
 		Pattern patron = Pattern.compile("[ 0-9A-Za-zñÑáéíóúÁÉÍÓÚ,.ºª/-]{10,200}");
 						
@@ -81,9 +94,14 @@ public interface Comprobable {
 		else return false;
 	}
 
+	/**
+	 * metodo para comprobar que el campo Codigo Postal cumple un patrón correcto
+	 * @param cPostal, dirección del cliente
+	 * @return true or false, en funcion de si se cumple el patrón
+	 */
 	public static boolean comprobarCodigoPostal(String cPostal) {
 		
-		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		//creamos un pattern con los caracteres que queremos validar
 		Pattern patron = Pattern.compile("[0-5][0-9]{4}");
 						
 		//comparamos el patron con la cadena recibida como parametro
@@ -94,9 +112,14 @@ public interface Comprobable {
 		else return false;
 	}
 
+	/**
+	 * metodo para comprobar que el campo Email cumple un patrón correcto
+	 * @param email, direccion de correcto electronico del cliente
+	 * @return true or false, en funcion de si se cumple el patrón
+	 */
 	public static boolean comprobarEmail(String email) {
 		
-		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos y caracteres especiales
 		Pattern patron = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 										
 		//comparamos el patron con la cadena recibida como parametro
@@ -107,9 +130,14 @@ public interface Comprobable {
 		else return false;
 	}
 
+	/**
+	 * metodo para comprobar que el campo teléfono cumple un patrón correcto
+	 * @param tfno, teléfono de contacto del cliente
+	 * @return true or false, en funcion de si se cumple el patrón
+	 */
 	public static boolean comprobarTelefono(String tfno) {
 		
-		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		//creamos un pattern con los caracteres que queremos validar, inclyendo formato para telefonos extranjeros
 		Pattern patron = Pattern.compile("^(\\+34|0034|34)?[6789][0-9]{8}$");
 								
 		//comparamos el patron con la cadena recibida como parametro

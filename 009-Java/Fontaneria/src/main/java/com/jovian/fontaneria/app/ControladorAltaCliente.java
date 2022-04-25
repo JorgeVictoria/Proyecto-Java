@@ -23,13 +23,20 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 
+/**
+ * clase para controlar la escena de alta de clientes
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class ControladorAltaCliente implements Initializable, Comprobable {
 	
-	//variables locales
-	private static String url = "jdbc:mariadb://localhost:3306/fontaneria";
-    private static String user = "root";
-	private static String password = "";
+	//variables para la conexion a la BBD
+	private static String url = "jdbc:mariadb://localhost:3306/fontaneria"; 
+    private static String user = "root";									
+	private static String password = "";									
 	private static Connection connection = null;
+	
+	//variable para poder trabajar con el nº identificador de cliente
 	private static String numCliente = null;
 	
 	//variables formulario
@@ -65,7 +72,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		
 		tfDNI.setTextFormatter(formatter);
 		
-		//esta parte del codigo controla que el campo Telefono no tenga mas de 9 caracteres
+		//esta parte del codigo controla que el campo Telefono no tenga mas de 13 caracteres
 		Pattern patternTel = Pattern.compile(".{0,13}");
 			TextFormatter formatterTel = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
 				return patternTel.matcher(change.getControlNewText()).matches()?change:null;
@@ -92,10 +99,11 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		
 		//variables locales
 		boolean correcto = true;
-		//iniciamos los warning cada vez que pulsemos click
+		
+		//iniciamos la cadena warning cada vez que pulsemos click
 		lblWarning.setText("");
 		
-		//mientras correcto sea true, iremos chequeando que los campos esten rellenados correctamente
+		//mientras correcto sea true, iremos chequeando que los campos esten rellenos correctamente
 		while(correcto) {
 			
 			//comprobamos que el formato del DNI es correcto
@@ -185,17 +193,23 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			}
 			
 			//si está todo correcto, conectamos con la BBDD e insertamos el cliente
-			insertarDatos();
-			if(correcto) break;
+			if(correcto) {
+				insertarDatos();
+				break;
+			}
 		}
-		
-		
-		
 	}
 	
+	/**
+	 * metodo para limpiar el formulario de alta de clientes
+	 * @param event, recoge el evento de click del boton nuevo cliente
+	 */
 	@FXML public void nuevoCliente(ActionEvent event) {
 		
+		//obtenemos el nuevo id del cliente
 		tfIDCliente.setText("C." + obtenerIdCliente());
+		
+		//limpiamos todos los campos del formulario
 		tfDNI.clear();
 		tfNombreCliente.clear();
 		tfApellido1.clear();
@@ -206,6 +220,8 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		tfProvincia.clear();
 		tfEmail.clear();
 		tfTelefono.clear();
+		
+		//activamos el boton para dar de alta y desactivamos el de nuevo cliente
 		btnDarAlta.setDisable(false);
 		btnNuevoCliente.setDisable(true);
 	}
@@ -248,9 +264,16 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 				e2.printStackTrace();
 			}
 		}
+		
+		//devolvemos el numero de cliente obtenido
 		return numCliente;
 	}
 	
+	/**
+	 * metodo para iniciar el proceso de insertar datos en la BBDD
+	 * una vez comprobado que todos los campos del formulario son correctos
+	 * @throws SQLException
+	 */
 	private void insertarDatos() throws SQLException {
 		
 		//variables locales
@@ -290,15 +313,22 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		else return false;
 	}
 	
+	/**
+	 * metodo con la sentencia sql para poder insertar datos del cliente en la BBDD
+	 * @throws SQLException
+	 */
 	private void insertarCliente() throws SQLException {
 		
 		//variables locales
-		Statement sentencia = connection.createStatement(); //creamos el statement para poder realizar la consulta
-		String sql = "";									//para poner 
+		//creamos el statement para poder realizar la consulta
+		Statement sentencia = connection.createStatement();
+		//inicializamos la cadena sql que almacenará la sentencía sql a ejecutar
+		String sql = "";									
 				
 		//insertamos los clientes
 		//para controlar el duplicado de la primary key, lo encerramos en un try catch
 		try {
+			//creamos la sentencia sql
 			sql="INSERT INTO cliente VALUES (" 
 					+ "'" + tfDNI.getText() + "',"
 					+ "'" + tfIDCliente.getText() + "',"
@@ -311,12 +341,26 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 					+ "'" + tfProvincia.getText() + "',"
 					+ "'" + tfTelefono.getText() + "',"
 					+ "'" + tfEmail.getText() + "'"
-					+ ")";				
-			sentencia.executeUpdate(sql);			//cogemos la informacion de la consulta
+					+ ")";
+			
+			//intentamos realizar la ejecución de la sentencia
+			sentencia.executeUpdate(sql);
+			
+			//si no hay problemas, avisamos al usuario que el dato ha sido insertado en la BBDD	
 			lblWarning.setText("cliente Introducido");
+			
+			//aumentamos el id del cliente
 			aumentarNumCliente();
+			
+			//deshabilitamos el boton dar de alta para no poder insertar el mismo cliente
+			//y tener que renovar el id del cliente
 			btnDarAlta.setDisable(true);
+			
+			//habilitamos el boton nuevo cliente para poder limpiar el formulario
+			//y obtener un nuevo id de cliente
 			btnNuevoCliente.setDisable(false);
+			
+			//excepciones por si el campo dni está repetido
 		} catch (SQLIntegrityConstraintViolationException e) {
 			System.out.println("No se ha podido ejecutar la linea: " + sql);
 			lblWarning.setText("ya existe un cliente con ese DNI");
@@ -324,18 +368,29 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		
 	}
 
+	/**
+	 * metodo para aumentar el num identificador del cliente
+	 * Y guardarlo en el fichero
+	 */
 	private void aumentarNumCliente() {
 		
+		//variables locales
 		FileWriter fichero = null;
 		PrintWriter pw = null;
 		
 		try
 		{
+			//apertura del fichero y creacion del objeto Printwriter
+			//para poder escribir en el fichero
 			fichero = new FileWriter("numCliente.txt");
 			pw = new PrintWriter(fichero);
 			
+			//incrementamos en uno el numero del Cliente
+			//y almacenamos dicho numero en el fichero
 			int incremento = Integer.parseInt(numCliente)+1;
 			pw.println(incremento);
+			
+			//control de excepiones y cerrado del fichero
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

@@ -46,7 +46,8 @@
             <TextField fx:id="tfTelefono" layoutX="824.0" layoutY="405.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnDarAlta" layoutX="577.0" layoutY="683.0" mnemonicParsing="false" onAction="#comprobarFormularioAlta" styleClass="btnMenu" stylesheets="@estilos.css" text="Dar de alta" />
+      <Button fx:id="btnDarAlta" layoutX="426.0" layoutY="683.0" mnemonicParsing="false" onAction="#comprobarFormularioAlta" styleClass="btnMenu" stylesheets="@estilos.css" text="Dar de alta" />
       <Label fx:id="lblWarning" layoutX="67.0" layoutY="755.0" prefHeight="17.0" prefWidth="1080.0" styleClass="warningLogin" stylesheets="@estilos.css" />
+      <Button fx:id="btnNuevoCliente" disable="true" layoutX="692.0" layoutY="683.0" mnemonicParsing="false" onAction="#nuevoCliente" styleClass="btnMenu" stylesheets="@estilos.css" text="Nuevo Cliente" />
    </children>
 </AnchorPane>

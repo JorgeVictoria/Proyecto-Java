@@ -3,10 +3,16 @@ package com.jovian.fontaneria.app;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javafx.event.ActionEvent;
@@ -18,6 +24,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 
 public class ControladorAltaCliente implements Initializable, Comprobable {
+	
+	//variables locales
+	private static String url = "jdbc:mariadb://localhost:3306/fontaneria";
+    private static String user = "root";
+	private static String password = "";
+	private static Connection connection = null;
+	private static String numCliente = null;
 	
 	//variables formulario
 	@FXML private TextField tfIDCliente;
@@ -32,6 +45,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	@FXML private TextField tfEmail;
 	@FXML private TextField tfTelefono;
 	@FXML private Button btnDarAlta;
+	@FXML private Button btnNuevoCliente;
 	@FXML private Label	lblWarning;
 	
 	/**
@@ -52,7 +66,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		tfDNI.setTextFormatter(formatter);
 		
 		//esta parte del codigo controla que el campo Telefono no tenga mas de 9 caracteres
-		Pattern patternTel = Pattern.compile(".{0,9}");
+		Pattern patternTel = Pattern.compile(".{0,13}");
 			TextFormatter formatterTel = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
 				return patternTel.matcher(change.getControlNewText()).matches()?change:null;
 			});
@@ -72,12 +86,12 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	 * Inicia la comprobacion de todos los campos del formulario
 	 * y si está todo correcto, insertará los datos en la BBDD
 	 * @param event, evento del ratón(click)
+	 * @throws SQLException 
 	 */
-	@FXML public void comprobarFormularioAlta(ActionEvent event) {
+	@FXML public void comprobarFormularioAlta(ActionEvent event) throws SQLException {
 		
 		//variables locales
 		boolean correcto = true;
-		
 		//iniciamos los warning cada vez que pulsemos click
 		lblWarning.setText("");
 		
@@ -94,7 +108,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			//comprobamos que la letra del dni es correcta
 			correcto = Comprobable.comprobarLetraDNI(tfDNI.getText());
 			if(!correcto) {
-				lblWarning.setText("La letra del DNI no es correcta");
+				lblWarning.setText("La letra del DNI no es correcta.");
 				break;
 			}
 			
@@ -102,7 +116,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			tfNombreCliente.setText(tfNombreCliente.getText().trim());
 			correcto = Comprobable.comprobarNombres(tfNombreCliente.getText());
 			if(!correcto) {
-				lblWarning.setText("El formato del nombre no es correcto");
+				lblWarning.setText("El formato del nombre no es correcto.");
 				break;
 			}
 			
@@ -110,7 +124,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			tfApellido1.setText(tfApellido1.getText().trim());
 			correcto = Comprobable.comprobarNombres(tfApellido1.getText());
 			if(!correcto) {
-				lblWarning.setText("El formato del primer apellido no es correcto");
+				lblWarning.setText("El formato del primer apellido no es correcto.");
 				break;
 			}
 			
@@ -118,7 +132,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			tfApellido2.setText(tfApellido2.getText().trim());
 			correcto = Comprobable.comprobarNombres(tfApellido2.getText());
 			if(!correcto) {
-				lblWarning.setText("El formato del segundo apellido no es correcto");
+				lblWarning.setText("El formato del segundo apellido no es correcto.");
 				break;
 			}
 			
@@ -126,14 +140,74 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			tfDireccion.setText(tfDireccion.getText().trim());
 			correcto = Comprobable.comprobarDireccion(tfDireccion.getText());
 			if(!correcto) {
-				lblWarning.setText("El formato de la direccion no es correcto");
+				lblWarning.setText("El formato de la direccion no es correcto.");
 				break;
 			}
 			
-			//si está todo correcto, rompemos el bucle
+			//comprobamos que el campo codigo postal no esté vacio y tenga el formato correcto(segun patron)
+			tfCPostal.setText(tfCPostal.getText().trim());
+			correcto = Comprobable.comprobarCodigoPostal(tfCPostal.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del codigo postal no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo localidad no esté vacio y tenga el formato correcto(solo letras)
+			tfLocalidad.setText(tfLocalidad.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfLocalidad.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato de la localidad no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo provincia no esté vacio y tenga el formato correcto(solo letras)
+			tfProvincia.setText(tfProvincia.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfProvincia.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato de la provincia no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo email no esté vacio y tenga el formato correcto(pattern correcto)
+			tfEmail.setText(tfEmail.getText().trim());
+			correcto = Comprobable.comprobarEmail(tfEmail.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del email no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo telefono no esté vacio y tenga el formato correcto(pattern correcto)
+			tfTelefono.setText(tfTelefono.getText().trim());
+			correcto = Comprobable.comprobarTelefono(tfTelefono.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del numero de telefono no es correcto.");
+				break;
+			}
+			
+			//si está todo correcto, conectamos con la BBDD e insertamos el cliente
+			insertarDatos();
 			if(correcto) break;
 		}
 		
+		
+		
+	}
+	
+	@FXML public void nuevoCliente(ActionEvent event) {
+		
+		tfIDCliente.setText("C." + obtenerIdCliente());
+		tfDNI.clear();
+		tfNombreCliente.clear();
+		tfApellido1.clear();
+		tfApellido2.clear();
+		tfDireccion.clear();
+		tfCPostal.clear();
+		tfLocalidad.clear();
+		tfProvincia.clear();
+		tfEmail.clear();
+		tfTelefono.clear();
+		btnDarAlta.setDisable(false);
+		btnNuevoCliente.setDisable(true);
 	}
 
 	/**
@@ -150,7 +224,6 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		FileReader fr = null;
 		BufferedReader br = null;
 		String linea = null;
-		String numCliente = null;
 		
 		try {
 			//Apertura del fichero y creacion de BufferedReader para poder
@@ -176,6 +249,103 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			}
 		}
 		return numCliente;
+	}
+	
+	private void insertarDatos() throws SQLException {
+		
+		//variables locales
+		boolean conectado = false;	//para controlar que estamos conectados a la BBDD
+		
+		//intentamos la conexion a la BBDD
+		try {
+			//llamada a la funcion de conexion
+			conectado = conectarBBDD();
+			
+			//si hay exito en la conexion,  lo indicamos y vamos llamando a las distintas funciones
+			if(conectado) {
+				System.out.println("Se ha conectado correctamente a la BBDD.");
+				insertarCliente();
+			}
+			//control de excepciones en caso de error durante la conexion.
+		} catch (SQLException e) {
+			lblWarning.setText("No se ha conectado a la BBDD.");
+			e.printStackTrace();
+		}
+		
+		//cerramos la conexion
+		connection.close();
+		
+	}
+
+	/**
+	 * metodo que realiza la conexion a la BBDD
+	 * @return true/false : en funcion de si hemos conectado o no
+	 * @throws SQLException
+	 */
+	private static boolean conectarBBDD() throws SQLException {
+		//intentamos la conexion
+		connection = DriverManager.getConnection(url, user, password);
+		//en funcion de si conectamos o no, devolvemos true or false
+		if(connection!=null) return true;
+		else return false;
+	}
+	
+	private void insertarCliente() throws SQLException {
+		
+		//variables locales
+		Statement sentencia = connection.createStatement(); //creamos el statement para poder realizar la consulta
+		String sql = "";									//para poner 
+				
+		//insertamos los clientes
+		//para controlar el duplicado de la primary key, lo encerramos en un try catch
+		try {
+			sql="INSERT INTO cliente VALUES (" 
+					+ "'" + tfDNI.getText() + "',"
+					+ "'" + tfIDCliente.getText() + "',"
+					+ "'" + tfNombreCliente.getText() + "',"
+					+ "'" + tfApellido1.getText() + "',"
+					+ "'" + tfApellido2.getText() + "',"
+					+ "'" + tfDireccion.getText() + "',"
+					+ "'" + tfCPostal.getText() + "',"
+					+ "'" + tfLocalidad.getText() + "',"
+					+ "'" + tfProvincia.getText() + "',"
+					+ "'" + tfTelefono.getText() + "',"
+					+ "'" + tfEmail.getText() + "'"
+					+ ")";				
+			sentencia.executeUpdate(sql);			//cogemos la informacion de la consulta
+			lblWarning.setText("cliente Introducido");
+			aumentarNumCliente();
+			btnDarAlta.setDisable(true);
+			btnNuevoCliente.setDisable(false);
+		} catch (SQLIntegrityConstraintViolationException e) {
+			System.out.println("No se ha podido ejecutar la linea: " + sql);
+			lblWarning.setText("ya existe un cliente con ese DNI");
+		}
+		
+	}
+
+	private void aumentarNumCliente() {
+		
+		FileWriter fichero = null;
+		PrintWriter pw = null;
+		
+		try
+		{
+			fichero = new FileWriter("numCliente.txt");
+			pw = new PrintWriter(fichero);
+			
+			int incremento = Integer.parseInt(numCliente)+1;
+			pw.println(incremento);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(null != fichero) fichero.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+		
 	}
 
 }

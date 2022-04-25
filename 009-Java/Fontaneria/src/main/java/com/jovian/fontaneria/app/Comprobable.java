@@ -52,7 +52,6 @@ public interface Comprobable {
 		
 	}
 	
-
 	/**
 	 * metodo para ver si el nombre o los apellidos cumplen con el patrón
 	 * @param nombre, nombre o apellidos
@@ -62,7 +61,7 @@ public interface Comprobable {
 		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
 		Pattern patron = Pattern.compile("[ A-Za-zñÑáéíóúÁÉÍÓÚ]{3,50}");
 				
-		//comparamos el patron con la cadena recibida como parametro, que será un nombre o un apellido
+		//comparamos el patron con la cadena recibida como parametro
 		Matcher comprobar = patron.matcher(nombre);
 				
 		//en funcion de la comparación se devolvera true or false
@@ -74,10 +73,49 @@ public interface Comprobable {
 		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
 		Pattern patron = Pattern.compile("[ 0-9A-Za-zñÑáéíóúÁÉÍÓÚ,.ºª/-]{10,200}");
 						
-		//comparamos el patron con la cadena recibida como parametro, que será un nombre o un apellido
+		//comparamos el patron con la cadena recibida como parametro
 		Matcher comprobar = patron.matcher(direccion);
 						
 		//en funcion de la comparación se devolvera true or false
+		if (comprobar.matches()) return true;
+		else return false;
+	}
+
+	public static boolean comprobarCodigoPostal(String cPostal) {
+		
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		Pattern patron = Pattern.compile("[0-5][0-9]{4}");
+						
+		//comparamos el patron con la cadena recibida como parametro
+		Matcher comprobar = patron.matcher(cPostal);
+						
+	    //en funcion de la comparación se devolvera true or false
+		if (comprobar.matches()) return true;
+		else return false;
+	}
+
+	public static boolean comprobarEmail(String email) {
+		
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		Pattern patron = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+										
+		//comparamos el patron con la cadena recibida como parametro
+		Matcher comprobar = patron.matcher(email);
+										
+		//en funcion de la comparación se devolvera true or false
+		if (comprobar.matches()) return true;
+		else return false;
+	}
+
+	public static boolean comprobarTelefono(String tfno) {
+		
+		//creamos un pattern con los caracteres que queremos validar, incluyendo acentos
+		Pattern patron = Pattern.compile("^(\\+34|0034|34)?[6789][0-9]{8}$");
+								
+		//comparamos el patron con la cadena recibida como parametro
+		Matcher comprobar = patron.matcher(tfno);
+								
+	    //en funcion de la comparación se devolvera true or false
 		if (comprobar.matches()) return true;
 		else return false;
 	}

@@ -45,6 +45,7 @@ CREATE TABLE `cliente` (
 
 LOCK TABLES `cliente` WRITE;
 /*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
+INSERT INTO `cliente` VALUES ('12345671F','C.1','Cliente','Uno','García','C/Sin Nombre nº 1 puerta 1','46900','Torrent','Valencia','961111111','ClienteUno@fontaneria.com'),('12345672P','C.2','Cliente','Dos','Gómez','C/ Sin Nombre nº 1 puerta 2','46900','Torrent','Valencia','962222222','ClienteDos@fontaneria.com'),('12345673D','C.3','Cliente','Tres','Pérez','C/Sin Nombre nº1 puerta 3','46970','Alacuas','Valencia','963333333','ClienteTres@fontaneria.com');
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-04-18 13:43:36
+-- Dump completed on 2022-04-25 14:18:54

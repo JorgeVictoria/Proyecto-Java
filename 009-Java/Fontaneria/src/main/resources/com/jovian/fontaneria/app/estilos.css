@@ -49,6 +49,8 @@
  
 .btnBuscarDocumento	{ -fx-graphic: url(../images/buscarDocumento.png);}
 
+.btnListarClientes { -fx-graphic: url(../images/lupa.png);}
+
 .lblAltaClientesHead { -fx-font-family: "Arial";
  	        			-fx-font-size: 28px;
  	        			-fx-font-weight: bold;
@@ -67,4 +69,13 @@
  	        -fx-font-size: 14px;
  	        -fx-font-weight: bold;
  	        -fx-text-fill: #013F78;}
+ 	        
+.comboBox 	{ -fx-font-family: "Arial";
+ 	        -fx-font-size: 14px;
+ 	        -fx-font-weight: bold;
+ 	        -fx-text-fill: #013F78;}
+ 	        
+.list-cell { -fx-text-fill: #013F78;}
+	
+
 

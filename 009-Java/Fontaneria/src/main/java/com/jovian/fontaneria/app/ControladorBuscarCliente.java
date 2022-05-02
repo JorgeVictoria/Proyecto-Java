@@ -1,18 +1,19 @@
 package com.jovian.fontaneria.app;
 
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
@@ -40,21 +41,42 @@ public class ControladorBuscarCliente {
 	@FXML private TextField tfTelefono;
 	@FXML private Button btnBuscarNombre;
 	@FXML private Button btnBuscarDni;
+	@FXML private Button btnNuevaBusqueda;
+	@FXML private Button btnModificarCliente;
+	@FXML private Button btnListarClientes;
 	@FXML private Label	lblWarning;
+	@FXML private ComboBox<String> cbListadoClientes;
 	
 	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
-	public void initialize(URL url, ResourceBundle rb) {
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@FXML public void initialize() {
+				
+		//mostramos un mensaje con instrucciones
+		lblWarning.setText("Busque un cliente por DNI o por nombre y apellidos");
 		
-	//esta parte del codigo controla que el campo DNI no tenga mas de 9 caracteres
-    Pattern pattern = Pattern.compile(".{0,9}");
-	TextFormatter formatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
-		return pattern.matcher(change.getControlNewText()).matches()?change:null;
-	});
+		//deshabilitamos el boton nuevaBusqueda
+		btnNuevaBusqueda.setDisable(true);
+		
+		//deshabilitamos el boton modificarCliente
+		btnModificarCliente.setDisable(true);
+		
+		//esta parte del codigo controla que el campo DNI no tenga mas de 9 caracteres
+		Pattern pattern = Pattern.compile(".{0,9}");
+		TextFormatter formatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
+			return pattern.matcher(change.getControlNewText()).matches()?change:null;
+		});
+				
+		tfDNI.setTextFormatter(formatter);
+		
+		ObservableList<String> items = FXCollections.observableArrayList();
+		items.addAll("Listar todos los clientes", "Listar por Codigo Postal", "Listar por Poblacion", "Listar por Provincia");
+		cbListadoClientes.setItems(items);
+		cbListadoClientes.getSelectionModel().select(0);
 		
 	}
+	
 	
 	@FXML public void comprobarBusquedaDni(ActionEvent event) throws SQLException {
 		
@@ -132,13 +154,48 @@ public class ControladorBuscarCliente {
 				break;
 			}
 					
-			//si está todo correcto, conectamos con la BBDD e insertamos el cliente
+			//si está todo correcto, conectamos con la BBDD y leemos los datos del cliente
 			if(correcto) {
+				//leemos los datos de la BBDD
 				leerDatos();
 				break;
 			}
 		}
 		
+	}
+	
+	@FXML public void CrearNuevaBusqueda(ActionEvent event) {
+		
+		//activamos y desactivamos botones
+		btnNuevaBusqueda.setDisable(true);
+		btnBuscarDni.setDisable(false);
+		btnBuscarNombre.setDisable(false);
+		btnModificarCliente.setDisable(true);
+		tfDNI.setEditable(true);
+		tfNombreCliente.setEditable(true);
+		tfApellido1.setEditable(true);
+		tfApellido2.setEditable(true);
+		
+		//limpiamos todos los campos del formulario
+		tfIDCliente.clear();
+		tfDNI.clear();
+		tfNombreCliente.clear();
+		tfApellido1.clear();
+		tfApellido2.clear();
+		tfDireccion.clear();
+		tfCPostal.clear();
+		tfLocalidad.clear();
+		tfProvincia.clear();
+		tfEmail.clear();
+		tfTelefono.clear();
+		
+		
+	}
+	
+	@FXML public void modificarCliente(ActionEvent event) {
+	}
+	
+	@FXML public void listarClientes(ActionEvent event) {
 	}
 	
 	/**
@@ -205,7 +262,17 @@ public class ControladorBuscarCliente {
 		//recogemos los datos de la consulta
 		ResultSet rs = sentencia.executeQuery(sql);
 		
-		if(!rs.wasNull()) lblWarning.setText("No se ha encontrado ningun cliente con esos datos");
+		//activamos y desactivamos botones y celdas
+		btnNuevaBusqueda.setDisable(false);
+		btnBuscarDni.setDisable(true);
+		btnBuscarNombre.setDisable(true);
+		tfDNI.setEditable(false);
+		tfNombreCliente.setEditable(false);
+		tfApellido1.setEditable(false);
+		tfApellido2.setEditable(false);
+		if(!rs.wasNull()) {
+			lblWarning.setText("No se ha encontrado ningun cliente con esos datos");
+		}
 		
 		//mostramos los datos por pantalla
 		while(rs.next()) {
@@ -221,6 +288,7 @@ public class ControladorBuscarCliente {
 			tfProvincia.setText(rs.getString(9));
 			tfEmail.setText(rs.getString(11));
 			tfTelefono.setText(rs.getString(10));
+			btnModificarCliente.setDisable(false);
 		}
 		
 		sentencia.close();

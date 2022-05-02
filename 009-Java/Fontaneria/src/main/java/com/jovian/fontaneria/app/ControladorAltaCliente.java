@@ -61,6 +61,9 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void initialize(URL url, ResourceBundle rb) {
 		
+		//mostramos un mensaje con instrucciones
+		lblWarning.setText("Rellene todos los campos para dar de alta un nuevo cliente");
+		
 		//debemos obtener un numero de cliente
 		tfIDCliente.setText("C." + obtenerIdCliente());
 		

@@ -70,6 +70,7 @@ public class ControladorBuscarCliente {
 				
 		tfDNI.setTextFormatter(formatter);
 		
+		//Listado de elementos del comboBox
 		ObservableList<String> items = FXCollections.observableArrayList();
 		items.addAll("Listar todos los clientes", "Listar por Codigo Postal", "Listar por Poblacion", "Listar por Provincia");
 		cbListadoClientes.setItems(items);
@@ -77,7 +78,11 @@ public class ControladorBuscarCliente {
 		
 	}
 	
-	
+	/**
+	 * funcion que sirve para poder iniciar la busqueda de un cliente por su dni
+	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException
+	 */
 	@FXML public void comprobarBusquedaDni(ActionEvent event) throws SQLException {
 		
 		//variables locales
@@ -115,6 +120,11 @@ public class ControladorBuscarCliente {
 		}
 	}
 	
+	/**
+	 * funcion que sirve para poder iniciar la busqueda de un cliente por su nombre y apellidos
+	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException
+	 */
 	@FXML public void comprobarBusquedaNombre(ActionEvent event) throws SQLException {
 		
 		//variables locales
@@ -164,6 +174,10 @@ public class ControladorBuscarCliente {
 		
 	}
 	
+	/**
+	 * metodo para limpiar todos los campos del formulario y poder realizar una nueva busqueda
+	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 */
 	@FXML public void CrearNuevaBusqueda(ActionEvent event) {
 		
 		//activamos y desactivamos botones
@@ -192,9 +206,17 @@ public class ControladorBuscarCliente {
 		
 	}
 	
+	/**
+	 * metodo para poder hacer una llamada a la escena que permite modificar los clientes
+	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 */
 	@FXML public void modificarCliente(ActionEvent event) {
 	}
 	
+	/**
+	 * metodo para poder imprimir por pantalla diversos listados, en función de la selección del combobox
+	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 */
 	@FXML public void listarClientes(ActionEvent event) {
 	}
 	

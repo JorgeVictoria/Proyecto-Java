@@ -12,16 +12,16 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
-import java.util.regex.Pattern;
 
+import interfaces.Chequeable;
+import interfaces.Comprobable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+
 
 /**
  * clase para controlar la escena de alta de clientes
@@ -55,10 +55,12 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	@FXML private Button btnNuevoCliente;
 	@FXML private Label	lblWarning;
 	
+//*******************************************************************************************************************************************************
+//*******************************************************************************************************************************************************
+ 
 	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
 	 */
-	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void initialize(URL url, ResourceBundle rb) {
 		
 		//mostramos un mensaje con instrucciones
@@ -68,28 +70,18 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		tfIDCliente.setText("C." + obtenerIdCliente());
 		
 		//esta parte del codigo controla que el campo DNI no tenga mas de 9 caracteres
-		Pattern pattern = Pattern.compile(".{0,9}");
-		TextFormatter formatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
-			return pattern.matcher(change.getControlNewText()).matches()?change:null;
-		});
-		
-		tfDNI.setTextFormatter(formatter);
+		tfDNI.setTextFormatter(Comprobable.getFormatter(".{0,9}"));
 		
 		//esta parte del codigo controla que el campo Telefono no tenga mas de 13 caracteres
-		Pattern patternTel = Pattern.compile(".{0,13}");
-			TextFormatter formatterTel = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
-				return patternTel.matcher(change.getControlNewText()).matches()?change:null;
-			});
-		tfTelefono.setTextFormatter(formatterTel);
+		tfTelefono.setTextFormatter(Comprobable.getFormatter(".{0,13}"));
 		
 		//esta parte del codigo controla que el campo Codigo Postal no tenga mas de 5 caracteres
-		Pattern patternCP = Pattern.compile(".{0,5}");
-		TextFormatter formatterCP = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
-			return patternCP.matcher(change.getControlNewText()).matches()?change:null;
-		});
-		tfCPostal.setTextFormatter(formatterCP);
+		tfCPostal.setTextFormatter(Comprobable.getFormatter(".{0,5}"));
 		
 	}
+	
+//*******************************************************************************************************************************************************
+//*******************************************************************************************************************************************************
 	
 	/**
 	 * metodo que recoge el evento click del boton del formulario
@@ -100,108 +92,19 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	 */
 	@FXML public void comprobarFormularioAlta(ActionEvent event) throws SQLException {
 		
-		//variables locales
-		boolean correcto = true;
-		
 		//iniciamos la cadena warning cada vez que pulsemos click
 		lblWarning.setText("");
 		
-		//mientras correcto sea true, iremos chequeando que los campos esten rellenos correctamente
-		while(correcto) {
-			
-			//comprobamos que el formato del DNI es correcto
-			correcto = Comprobable.comprobarFormatoDNI(tfDNI.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del DNI incorrecto.");
-				break;
-			}
-			
-			//comprobamos que la letra del dni es correcta
-			correcto = Comprobable.comprobarLetraDNI(tfDNI.getText());
-			if(!correcto) {
-				lblWarning.setText("La letra del DNI no es correcta.");
-				break;
-			}
-			
-			//comprobamos que el campo nombre no esté vacio y tenga el formato correcto(solo letras)
-			tfNombreCliente.setText(tfNombreCliente.getText().trim());
-			correcto = Comprobable.comprobarNombres(tfNombreCliente.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del nombre no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo apellido1 no esté vacio y tenga el formato correcto(solo letras)
-			tfApellido1.setText(tfApellido1.getText().trim());
-			correcto = Comprobable.comprobarNombres(tfApellido1.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del primer apellido no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo apellido2 no esté vacio y tenga el formato correcto(solo letras)
-			tfApellido2.setText(tfApellido2.getText().trim());
-			correcto = Comprobable.comprobarNombres(tfApellido2.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del segundo apellido no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo direccion no esté vacio y tenga el formato correcto(letras y numeros segun patron)
-			tfDireccion.setText(tfDireccion.getText().trim());
-			correcto = Comprobable.comprobarDireccion(tfDireccion.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato de la direccion no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo codigo postal no esté vacio y tenga el formato correcto(segun patron)
-			tfCPostal.setText(tfCPostal.getText().trim());
-			correcto = Comprobable.comprobarCodigoPostal(tfCPostal.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del codigo postal no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo localidad no esté vacio y tenga el formato correcto(solo letras)
-			tfLocalidad.setText(tfLocalidad.getText().trim());
-			correcto = Comprobable.comprobarNombres(tfLocalidad.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato de la localidad no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo provincia no esté vacio y tenga el formato correcto(solo letras)
-			tfProvincia.setText(tfProvincia.getText().trim());
-			correcto = Comprobable.comprobarNombres(tfProvincia.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato de la provincia no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo email no esté vacio y tenga el formato correcto(pattern correcto)
-			tfEmail.setText(tfEmail.getText().trim());
-			correcto = Comprobable.comprobarEmail(tfEmail.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del email no es correcto.");
-				break;
-			}
-			
-			//comprobamos que el campo telefono no esté vacio y tenga el formato correcto(pattern correcto)
-			tfTelefono.setText(tfTelefono.getText().trim());
-			correcto = Comprobable.comprobarTelefono(tfTelefono.getText());
-			if(!correcto) {
-				lblWarning.setText("El formato del numero de telefono no es correcto.");
-				break;
-			}
-			
-			//si está todo correcto, conectamos con la BBDD e insertamos el cliente
-			if(correcto) {
-				insertarDatos();
-				break;
-			}
-		}
+		//iniciamos la comprobación del cliente
+		boolean correcto = Chequeable.chequeaCliente(lblWarning,tfDNI, tfNombreCliente,tfApellido1, tfApellido2, tfDireccion, tfCPostal, tfLocalidad, tfProvincia, tfEmail, tfTelefono);
+		
+		//si está todo correcto, conectamos con la BBDD e insertamos el cliente
+		if(correcto)insertarDatos();
+				
 	}
+	
+//*******************************************************************************************************************************************************
+//*******************************************************************************************************************************************************
 	
 	/**
 	 * metodo para limpiar el formulario de alta de clientes

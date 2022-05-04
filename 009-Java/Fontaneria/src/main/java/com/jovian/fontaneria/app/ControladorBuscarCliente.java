@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.function.UnaryOperator;
 import java.util.regex.Pattern;
 
+import interfaces.Comprobable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

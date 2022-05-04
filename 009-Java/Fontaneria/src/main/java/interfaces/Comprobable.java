@@ -1,7 +1,10 @@
-package com.jovian.fontaneria.app;
+package interfaces;
 
+import java.util.function.UnaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javafx.scene.control.TextFormatter;
 
 /**
  * interfaz para implementar diferentes metodos que nos permitiran 
@@ -146,6 +149,22 @@ public interface Comprobable {
 	    //en funcion de la comparación se devolvera true or false
 		if (comprobar.matches()) return true;
 		else return false;
+	}
+	
+	/**
+	 * metodo para comprobar que en algunos campos no pueda escribir mas caracteres de los permitidos
+	 * @param cantidadCaracteres, el rango de caracteres permitidos
+	 * @return, el texto con el numero de caracteres correspondiente
+	 */
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	public static TextFormatter getFormatter(String cantidadCaracteres) {
+		
+		Pattern pattern = Pattern.compile(cantidadCaracteres);
+		TextFormatter formatter = new TextFormatter((UnaryOperator<TextFormatter.Change>) change -> {
+			return pattern.matcher(change.getControlNewText()).matches()?change:null;
+		});
+		
+		return formatter;
 	}
 
 }

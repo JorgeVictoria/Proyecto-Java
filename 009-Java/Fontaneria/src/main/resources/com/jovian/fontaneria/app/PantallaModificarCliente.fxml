@@ -33,23 +33,28 @@
             <TextField fx:id="tfApellido1" layoutX="493.0" layoutY="142.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <TextField fx:id="tfApellido2" layoutX="824.0" layoutY="143.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <Label layoutX="32.0" layoutY="233.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Direccion" />
-            <TextField fx:id="tfDireccion" editable="false" layoutX="135.0" layoutY="230.0" prefHeight="30.0" prefWidth="889.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfDireccion" layoutX="135.0" layoutY="230.0" prefHeight="30.0" prefWidth="889.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <Label layoutX="35.0" layoutY="320.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="C. Postal" />
             <Label layoutX="389.0" layoutY="320.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Localidad" />
             <Label layoutX="724.0" layoutY="320.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Provincia" />
-            <TextField fx:id="tfCPostal" editable="false" layoutX="135.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
-            <TextField fx:id="tfLocalidad" editable="false" layoutX="493.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
-            <TextField fx:id="tfProvincia" editable="false" layoutX="824.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfCPostal" layoutX="135.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfLocalidad" layoutX="493.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfProvincia" layoutX="824.0" layoutY="317.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <Label layoutX="51.0" layoutY="408.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Email" />
             <Label layoutX="733.0" layoutY="408.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Telefono" />
-            <TextField fx:id="tfEmail" editable="false" layoutX="129.0" layoutY="405.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
-            <TextField fx:id="tfTelefono" editable="false" layoutX="824.0" layoutY="405.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfEmail" layoutX="129.0" layoutY="405.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
+            <TextField fx:id="tfTelefono" layoutX="824.0" layoutY="405.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
          </children>
       </AnchorPane>
-      <Button fx:id="btnNuevaBusqueda" layoutX="108.0" layoutY="683.0" mnemonicParsing="false" onAction="#CrearNuevaBusqueda" styleClass="btnMenu" stylesheets="@estilos.css" text="Nueva Busqueda" />
-      <Button fx:id="btnBuscarDni" layoutX="367.0" layoutY="683.0" mnemonicParsing="false" onAction="#comprobarBusquedaDni" styleClass="btnMenu" stylesheets="@estilos.css" text="Buscar por DNI" />
+      <Button fx:id="btnPrimerCliente" layoutX="67.0" layoutY="684.0" mnemonicParsing="false" onAction="#buscarPrimerCliente" prefHeight="17.0" prefWidth="24.0" styleClass="btnPrimerCliente" stylesheets="@estilos.css" />
+      <Button fx:id="btnAnteriorCliente" layoutX="123.0" layoutY="684.0" mnemonicParsing="false" onAction="#buscarAnteriorCliente" styleClass="btnAnteriorCliente" stylesheets="@estilos.css" />
+      <Button fx:id="btnNuevaBusqueda" layoutX="182.0" layoutY="685.0" mnemonicParsing="false" onAction="#CrearNuevaBusqueda" styleClass="btnMenu" stylesheets="@estilos.css" text="Nueva Busqueda" />
+      <Button fx:id="btnBuscarDni" layoutX="345.0" layoutY="685.0" mnemonicParsing="false" onAction="#comprobarBusquedaDni" styleClass="btnMenu" stylesheets="@estilos.css" text="Buscar por DNI" />
+      <Button fx:id="btnBuscarNombre" layoutX="493.0" layoutY="685.0" mnemonicParsing="false" onAction="#comprobarBusquedaNombre" styleClass="btnMenu" stylesheets="@estilos.css" text="Buscar por Nombre y Apellidos" />
+      <Button fx:id="btnIntroducirCampos" layoutX="746.0" layoutY="685.0" mnemonicParsing="false" onAction="#introducirCampos" styleClass="btnMenu" stylesheets="@estilos.css" text="Introducir Datos" />
+      <Button fx:id="btnModificarDatos" layoutX="903.0" layoutY="683.0" mnemonicParsing="false" onAction="#modificarCliente" styleClass="btnMenu" stylesheets="@estilos.css" text="Modificar Datos" />
+      <Button fx:id="btnPosteriorCliente" layoutX="1051.0" layoutY="682.0" mnemonicParsing="false" onAction="#buscarPosteriorCliente" styleClass="btnPosteriotCliente" stylesheets="@estilos.css" />
+      <Button fx:id="btnUltimoCliente" layoutX="1104.0" layoutY="682.0" mnemonicParsing="false" onAction="#buscarUltimoCliente" styleClass="btnUltimoCliente" stylesheets="@estilos.css" />
       <Label fx:id="lblWarning" layoutX="67.0" layoutY="755.0" prefHeight="17.0" prefWidth="1080.0" styleClass="warningLogin" stylesheets="@estilos.css" />
-      <Button fx:id="btnBuscarNombre" layoutX="607.0" layoutY="683.0" mnemonicParsing="false" onAction="#comprobarBusquedaNombre" styleClass="btnMenu" stylesheets="@estilos.css" text="Buscar por Nombre y Apellidos" />
-      <Button fx:id="btnModificarCliente" layoutX="949.0" layoutY="683.0" mnemonicParsing="false" onAction="#modificarCliente" styleClass="btnMenu" stylesheets="@estilos.css" text="Modificar Cliente" />
    </children>
 </AnchorPane>

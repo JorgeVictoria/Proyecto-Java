@@ -51,6 +51,14 @@
 
 .btnListarClientes { -fx-graphic: url(../images/lupa.png);}
 
+.btnPrimerCliente { -fx-graphic: url(../images/doubleLeftArrow.png);}
+
+.btnAnteriorCliente { -fx-graphic: url(../images/leftArrow.png);}
+
+.btnPosteriotCliente { -fx-graphic: url(../images/rightArrow.png);}
+
+.btnUltimoCliente { -fx-graphic: url(../images/doubleRightArrow.png);}
+
 .lblAltaClientesHead { -fx-font-family: "Arial";
  	        			-fx-font-size: 28px;
  	        			-fx-font-weight: bold;

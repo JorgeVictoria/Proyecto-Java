@@ -109,4 +109,75 @@ public interface Chequeable {
 		
 	}
 
+	public static boolean chequearDni(Label lblWarning, TextField tfDNI) {
+		
+		//variables locales
+		boolean correcto = true;
+		
+		while(correcto) {
+			
+			//comprobamos que el formato del DNI es correcto
+			correcto = Comprobable.comprobarFormatoDNI(tfDNI.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del DNI incorrecto.");
+				break;
+			}
+					
+			//comprobamos que la letra del dni es correcta
+			correcto = Comprobable.comprobarLetraDNI(tfDNI.getText());
+			if(!correcto) {
+				lblWarning.setText("La letra del DNI no es correcta.");
+				break;
+			}
+			
+			//si esta todo correcto, ya podemos salir del bucle
+			if(correcto) break;
+			
+		}
+		
+		//devolvemos el valor de la comprobación de los campos
+		return correcto;
+		
+	}
+
+	public static boolean chequearNombreApellidos(Label lblWarning, TextField tfNombreCliente, TextField tfApellido1,TextField tfApellido2) {
+		
+		//variables locales
+		boolean correcto = true;
+		
+		while(correcto) {
+			
+			//comprobamos que el campo nombre no esté vacio y tenga el formato correcto(solo letras)
+			tfNombreCliente.setText(tfNombreCliente.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfNombreCliente.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del nombre no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo apellido1 no esté vacio y tenga el formato correcto(solo letras)
+			tfApellido1.setText(tfApellido1.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfApellido1.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del primer apellido no es correcto.");
+				break;
+			}
+			
+			//comprobamos que el campo apellido2 no esté vacio y tenga el formato correcto(solo letras)
+			tfApellido2.setText(tfApellido2.getText().trim());
+			correcto = Comprobable.comprobarNombres(tfApellido2.getText());
+			if(!correcto) {
+				lblWarning.setText("El formato del segundo apellido no es correcto.");
+				break;
+			}
+			
+			//si esta todo correcto, ya podemos salir del bucle
+			if(correcto) break;
+			
+		}
+		
+		//devolvemos el valor de la comprobación de los campos
+		return correcto;
+	}
+
 }

@@ -1,6 +1,7 @@
 package interfaces;
 
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 public interface Chequeable {
@@ -177,6 +178,53 @@ public interface Chequeable {
 		}
 		
 		//devolvemos el valor de la comprobación de los campos
+		return correcto;
+	}
+
+	public static boolean chequeaMaterial(Label lblWarning, String claseMaterial, TextField tfNombreMaterial, TextField tfPrecioCosteMaterial, TextField tfPorcentajeIncrementoMaterial, TextArea taDescripcionMaterial) {
+		
+		//variables locales
+		boolean correcto = true;
+		
+		while(correcto) {
+			
+			//comprobamos que el campo nombreMaterial no esté vacio.
+			tfNombreMaterial.setText(tfNombreMaterial.getText().trim());
+			if(tfNombreMaterial.getText().isBlank() && tfNombreMaterial.getText().isEmpty())correcto = false;
+			if(!correcto) {
+				lblWarning.setText("El campo nombre no puede estar vacio");
+				break;
+			}
+			
+			//comprobamos que el campo claseMaterial corresponda con algun tipo de materual
+			if(claseMaterial.equals("ninguno")) correcto = false;
+			if(!correcto) {
+				lblWarning.setText("Debe seleccionar un tipo de material");
+				break;
+			}
+			
+			//comprobamos que el campo tfPrecioCosteMaterial sea de tipo numerico
+			correcto = Comprobable.comprobarDouble(tfPrecioCosteMaterial);
+			if(!correcto) {
+				lblWarning.setText("El campo precio debe ser numerico");
+				break;
+			}
+			
+			//comprobamos que el campo tfPrecioCosteMaterial sea de tipo numerico
+			correcto = Comprobable.comprobarDouble(tfPorcentajeIncrementoMaterial);
+			if(!correcto) {
+				lblWarning.setText("El campo del porcentaje debe ser numerico");
+				break;
+			}
+			
+			if(taDescripcionMaterial.getText().isBlank() && taDescripcionMaterial.getText().isEmpty()) taDescripcionMaterial.setText("sin descripcion");
+			
+			
+			//si esta todo correcto, ya podemos salir del bucle
+			if(correcto) break;
+			
+		}
+		
 		return correcto;
 	}
 

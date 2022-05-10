@@ -516,6 +516,10 @@ public class ControladorBajaCliente {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 
+	/**
+	 * metodo para el borrado de un cliente en la BBDD
+	 * @throws SQLException
+	 */
 	private void borrarDatos() throws SQLException {
 		
 		BaseDatos.borrar("DELETE FROM cliente where DNI = '" + claves.get(indice) + "';");

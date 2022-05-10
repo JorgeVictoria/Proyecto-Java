@@ -4,6 +4,7 @@ import java.util.function.UnaryOperator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javafx.scene.control.TextField;
 import javafx.scene.control.TextFormatter;
 
 /**
@@ -165,6 +166,16 @@ public interface Comprobable {
 		});
 		
 		return formatter;
+	}
+
+	public static boolean comprobarDouble(TextField tfPrecioCosteMaterial) {
+		
+		try {
+			Double.parseDouble(tfPrecioCosteMaterial.getText().toString());
+		} catch (Exception ex) {
+			return false;
+		}
+		return true;
 	}
 
 }

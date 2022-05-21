@@ -181,7 +181,7 @@ public class ControladorBuscarMaterial {
 		btnBuscarMaterial.setDisable(false);
 		btnBuscarNombre.setDisable(false);
 		btnNuevaBusqueda.setDisable(true);
-		btnSiguienteMaterial.setDefaultButton(true);
+		btnSiguienteMaterial.setDisable(true);
 		btnAnteriorMaterial.setDisable(true);
 		btnPrimerMaterial.setDisable(false);
 		btnUltimoMaterial.setDisable(false);

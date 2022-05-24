@@ -124,8 +124,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>9 CHAR</dataTypeSize>
-<ownDataTypeParameters>9 CHAR,,</ownDataTypeParameters>
+<dataTypeSize>13 CHAR</dataTypeSize>
+<ownDataTypeParameters>13 CHAR,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 <Column name="Correo" id="1137063E-5B88-43D2-A297-C50D510EDE75">

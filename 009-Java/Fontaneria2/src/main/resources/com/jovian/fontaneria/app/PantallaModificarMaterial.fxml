@@ -18,16 +18,16 @@
       </ImageView>
       <ImageView fitHeight="111.0" fitWidth="76.0" layoutX="741.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/buscarMaterial.png" />
+            <Image url="@../images/modificarMaterial.png" />
          </image>
       </ImageView>
-      <Label layoutX="854.0" layoutY="97.0" styleClass="lblAltaClientesHead" stylesheets="@estilos.css" text="BUSCAR MATERIAL" />
+      <Label layoutX="854.0" layoutY="97.0" styleClass="lblAltaClientesHead" stylesheets="@estilos.css" text="MODIFICAR MATERIAL" />
       <AnchorPane layoutX="60.0" layoutY="168.0" prefHeight="480.0" prefWidth="1080.0" styleClass="AnchorPaneDatos" stylesheets="@estilos.css">
          <children>
             <Label layoutX="42.0" layoutY="54.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="IDMaterial" />
             <TextField fx:id="tfIdMaterial" editable="false" layoutX="160.0" layoutY="51.0" prefHeight="30.0" prefWidth="203.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <Label layoutX="510.0" layoutY="54.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Tipo Material" />
-            <ComboBox fx:id="cbTipoMaterial" layoutX="663.0" layoutY="49.0" onAction="#elegirTipoMaterial" prefHeight="30.0" prefWidth="358.0" promptText="Seleccione una tipo" styleClass="comboBox" stylesheets="@estilos.css" />
+            <ComboBox fx:id="cbTipoMaterial" layoutX="663.0" layoutY="49.0"  prefHeight="30.0" prefWidth="358.0" promptText="Seleccione una tipo" styleClass="comboBox" stylesheets="@estilos.css" />
             <Label layoutX="52.0" layoutY="145.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Nombre" />
             <TextField fx:id="tfNombreMaterial" layoutX="160.0" layoutY="140.0" prefHeight="32.0" prefWidth="864.0" styleClass="tfAltaClientes" stylesheets="@estilos.css" />
             <Label layoutX="32.0" layoutY="233.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Descripcion" />

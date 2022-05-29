@@ -16,7 +16,9 @@ import java.io.IOException;
  */
 public class App extends Application {
 
+	//variables locales
     private static Scene scene;
+    
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("PantallaLogin"), 600, 400);
@@ -43,11 +45,21 @@ public class App extends Application {
     	}
     }
 
+    /**
+     * metodo para construir el objeto scene
+     * @param fxml, nombre del fichero xml
+     * @return llamada a metodo para carga de la escena
+     * @throws IOException, control de excepciones I/O
+     */
     private static Parent loadFXML(String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource(fxml + ".fxml"));
         return fxmlLoader.load();
     }
 
+    /**
+     * clase main que inicia la aplicacion
+     * @param args, parametros de entrada para poder utilizar en la app
+     */
     public static void main(String[] args) {
         launch();
     }

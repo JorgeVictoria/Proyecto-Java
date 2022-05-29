@@ -27,8 +27,8 @@ public class ControladorPrincipal {
 	/**
 	 * metodo que recoge el evento del boton login
 	 * comprueba las credenciales para acceder a la aplicacion
-	 * @param event, evento del btnLogiv al pulsar sobre él.
-	 * @throws IOException 
+	 * @param event evento del btnLogiv al pulsar sobre él.
+	 * @throws IOException control de excepciones IO 
 	 */
 	@FXML public void comprobarCredenciales(ActionEvent event) throws IOException {
 		
@@ -48,7 +48,7 @@ public class ControladorPrincipal {
 
 	/**
 	 * metodo para comprobar que los campos login y password no están vacios
-	 * @return correcto, false si no estan vacios y true  si al menos uno lo está
+	 * @return correcto false si no estan vacios y true  si al menos uno lo está
 	 */
 	private boolean comprobarCamposVacios() {
 		
@@ -67,7 +67,7 @@ public class ControladorPrincipal {
 	
 	/**
 	 * metodo para comprobar que los cmapos login y password son correctos
-	 * @return correcto, true si son correctos y false si son incorrectos.
+	 * @return correcto true si son correctos y false si son incorrectos.
 	 */
 	private boolean comprobarCamposCorrectos() {
 		

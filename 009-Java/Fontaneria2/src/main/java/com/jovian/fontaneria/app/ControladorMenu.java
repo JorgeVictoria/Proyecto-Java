@@ -36,8 +36,8 @@ public class ControladorMenu {
 	 * Funcion que recoge el evento de click de los botones,
 	 * obtiene el id del boton pulsado e invoca la ventana correspondiente
 	 * pasando el controlador y el fichero fxml que corresponda
-	 * @param event
-	 * @throws IOException
+	 * @param event recoge el evento del boton
+	 * @throws IOException control de excepciones IO
 	 */
 	@SuppressWarnings("rawtypes")
 	@FXML public void seleccionarOpcion(ActionEvent event) throws IOException {
@@ -101,10 +101,10 @@ public class ControladorMenu {
 
 	/**
 	 * metodo para abrir la escena que corresponda en modo modal
-	 * @param nameClass, el nombre del controlador que debe leer
-	 * @param resource, el nombre del fichero fxml
-	 * @param event,recoge los eventos click de los botones del menu 
-	 * @throws IOException
+	 * @param nameClass el nombre del controlador que debe leer
+	 * @param resource el nombre del fichero fxml
+	 * @param event recoge los eventos click de los botones del menu 
+	 * @throws IOException control de excepciones IO
 	 */
 	@SuppressWarnings("rawtypes")
 	private void abrirVentana(Class nameClass, String resource, ActionEvent event) throws IOException {

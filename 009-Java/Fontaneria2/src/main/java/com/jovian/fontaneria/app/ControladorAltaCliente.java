@@ -75,7 +75,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	 * Inicia la comprobacion de todos los campos del formulario
 	 * y si está todo correcto, insertará los datos en la BBDD
 	 * @param event, evento del ratón(click)
-	 * @throws SQLException 
+	 * @throws SQLException control de excepciones SQL
 	 */
 	@FXML public void comprobarFormularioAlta(ActionEvent event) throws SQLException {
 		
@@ -128,7 +128,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	/**
 	 * metodo para iniciar el proceso de insertar datos en la BBDD
 	 * una vez comprobado que todos los campos del formulario son correctos
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void insertarDatos() throws SQLException {
 		
@@ -162,6 +162,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 			//insertamos los datos en la BBDD
 			boolean insertado = BaseDatos.insertar(sql);
 			
+			//Si se han insertado los datos correctamente, realizamos una serie de operaciones
 			if(insertado) {
 				
 				//si no hay problemas, avisamos al usuario que el dato ha sido insertado en la BBDD	
@@ -177,6 +178,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 				btnNuevoCliente.setDisable(false);
 				
 			} else {
+		        //si el campo DNI, como primary key que es, esta repetido
 				lblWarning.setText("ya existe un cliente con ese DNI");
 				//habilitamos el boton nuevo cliente para poder limpiar el formulario
 				btnNuevoCliente.setDisable(false);

@@ -15,8 +15,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * clase para controlar la escena de alta de clientes
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class ControladorAltaMaterial {
 	
+	//variables elementos formulario
 	@FXML private TextField tfIdMaterial;
 	@FXML private TextField tfNombreMaterial;
 	@FXML private TextField tfPrecioCosteMaterial;
@@ -33,9 +39,9 @@ public class ControladorAltaMaterial {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 		
-	/*
+	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
-	 * @throws SQLException 
+	 * @throws SQLException control de excepciones SQL
 	 */
 	
 	@FXML public void initialize() throws SQLException {
@@ -49,29 +55,32 @@ public class ControladorAltaMaterial {
 				"Platos de ducha", "Mamparas", "Ceramica Pavimentos", "Ceramica Revestimentos", "Ceramica Laminados", "Calefacción", "Trabajos");
 		cbTipoMaterial.setItems(items);
 		
-		
-		
-	}
-	
-//*******************************************************************************************************************************************************
-//*******************************************************************************************************************************************************
-		
-	@FXML public void elegirTipoMaterial(ActionEvent event)  {
-		
 	}
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 	
+	/**
+	 * metodo que controla la acción sobre el boton de alta de material
+	 * Basicamente inicia todo el proceso necesario para el insertado de material en la BBDD
+	 * @param event, recoge el evento sobre el boton
+	 * @throws SQLException control de excepciones SQL
+	 */
 	@FXML public void darAltaMaterial(ActionEvent event) throws SQLException  {
 		
+		//llamada a la funcion para iniciar el proceso de insercion de datos
 		insertarDatos();
 		
 	}
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-		
+	
+	/**
+	 * metodo que controla el boton que permite insertar nuevo material en la BBDD
+	 * Su función es limpiar todos los campos para permitir introducir nuevos datos
+	 * @param event recoge el evento sobre el boton
+	 */
 	@FXML public void nuevoMaterial(ActionEvent event)  {
 		
 		//limpiamos los campos
@@ -93,7 +102,12 @@ public class ControladorAltaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-		
+	
+	/**
+	 * metodo que controla el boton calcular campos
+	 * Se chequea que todos los campos sean correctos y se realizan los calculos correspondientes
+	 * @param event controla el evento sobre el botón
+	 */
 	@FXML public void calcularCampos(ActionEvent event){
 		
 		//variables locales
@@ -125,40 +139,59 @@ public class ControladorAltaMaterial {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 
+	/**
+	 * metodo para obtener la clave primaria del material
+	 * como de momento no hay formato establecido, vamos a hacer uso de los datos fecha/hora
+	 * @return la primaryKey
+	 */
 	private static String obtenerClave() {
+		
+		//variables locales
+		String mes, dia, hora, minuto,segundos;
 			
 		//cogemos el valor fecha/hora del momento
 		LocalDateTime tiempo = LocalDateTime.now();
 		
-		String mes, dia, hora, minuto,segundos;
+		//empezamos la construccion de la primary key
+		//para respetar que todas las claves tengan la misma longitud,
+		//añadimos el valor cuando el valor de una variable sea menor que 0
 		String year = String.valueOf(tiempo.getYear());
+		
 		if(tiempo.getMonthValue()<10) mes = "0" +String.valueOf(tiempo.getMonthValue());
 		else mes = String.valueOf(tiempo.getMonthValue());
+		
 		if(tiempo.getDayOfMonth()<10) dia = "0" +String.valueOf(tiempo.getDayOfMonth());
 		else dia = String.valueOf(tiempo.getDayOfMonth());
+		
 		if(tiempo.getHour()<10) hora = "0" +String.valueOf(tiempo.getHour());
 		else hora = String.valueOf(tiempo.getHour());
+		
 		if(tiempo.getMinute()<10) minuto = "0" +String.valueOf(tiempo.getMinute());
 		else minuto = String.valueOf(tiempo.getMinute());
+		
 		if(tiempo.getSecond()<10) segundos = "0" +String.valueOf(tiempo.getSecond());
 		else segundos = String.valueOf(tiempo.getSecond());
 		
+		//se devuelve el formato de la primary key
 		return year+mes+dia+hora+minuto+segundos;
 		
-		
-			
 	}
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 	
+	/**
+	 * metodo para calcular el precio final del material
+	 */
 	private void calcularPrecioFinal() {
 		
+		//operaciones para calcular el precio final del producto a partir del del precio de coste y el iva
 		double precioOrigen = Double.parseDouble(tfPrecioCosteMaterial.getText().toString());
 		double porcentajeIncremento = Double.parseDouble(tfPorcentajeIncrementoMaterial.getText().toString());
 		double totalIncremento = precioOrigen * porcentajeIncremento / 100;
 		double precioFinal = precioOrigen + totalIncremento;
 		
+		//se muestra en pantalla el valor del incremento del iva y el valor del precio final
 		tfIncrementoMaterial.setText(String.format("%.2f", totalIncremento));
 		tfPrecioUnitarioMaterial.setText(String.format("%.2f", precioFinal));
 	
@@ -170,7 +203,7 @@ public class ControladorAltaMaterial {
 	/**
 	 * metodo para iniciar el proceso de insertar datos en la BBDD
 	 * una vez comprobado que todos los campos del formulario son correctos
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void insertarDatos() throws SQLException {
 		

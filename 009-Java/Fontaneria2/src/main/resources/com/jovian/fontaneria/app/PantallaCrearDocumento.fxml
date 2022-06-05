@@ -32,7 +32,7 @@
             <Button fx:id="btnGuardarPresupuesto" disable="true" layoutX="976.0" layoutY="10.0" mnemonicParsing="false" onAction="#guardarPresupuesto" styleClass="btnMenu" stylesheets="@estilos.css" text="Guardar Presupuesto" />
          </children>
       </AnchorPane>
-      <Label fx:id="lblWarning" layoutX="67.0" layoutY="755.0" prefHeight="17.0" prefWidth="1080.0" styleClass="warningLogin" stylesheets="@estilos.css" />
+      <Label fx:id="lblWarning" layoutX="67.0" layoutY="755.0" prefHeight="17.0" prefWidth="1080.0" styleClass="warningLogin" stylesheets="@estilos.css" visible="false" />
       <Label layoutX="80.0" layoutY="253.0" styleClass="lblAltaClientes" stylesheets="@estilos.css" text="Datos Cliente" />
       <AnchorPane layoutX="60.0" layoutY="282.0" prefHeight="203.0" prefWidth="483.0" styleClass="AnchorPaneDatos" stylesheets="@estilos.css">
          <children>

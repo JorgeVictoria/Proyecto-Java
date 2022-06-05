@@ -18,12 +18,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * clase para controlar la escena de consulta de la tabla clientes
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class ControladorBajaMaterial {
 	
 	//variables locales
-    private static String btnId = null;
-    private static ArrayList<String> claves = new ArrayList<String>();
-    private int indice = 0;
+    private static String btnId = null;								   //para almacenar el id del botón pulsado
+    private static ArrayList<String> claves = new ArrayList<String>(); //almcena las primary key de materiales. Será el indice
+    private int indice = 0;											   //para controlar la posicion del indice
 	
 	//variables formulario
 	@FXML private TextField tfIdMaterial;
@@ -46,11 +51,10 @@ public class ControladorBajaMaterial {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 		
-	/*
+	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
-	 * @throws SQLException 
+	 * @throws SQLException control de excepciones SQL
 	 */
-	
 	@FXML public void initialize() throws SQLException {
 		
 		//mostramos un mensaje con instrucciones
@@ -76,17 +80,14 @@ public class ControladorBajaMaterial {
 		leerDatos("buscarObjeto");
 		
 	}
-	
-//*******************************************************************************************************************************************************
-//*******************************************************************************************************************************************************
-			
-	@FXML public void elegirTipoMaterial(ActionEvent event)  {
-			
-	}
 
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-				
+	/**
+	 * metodo para poder leer el primer registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */			
 	@FXML public void verPrimerMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -100,7 +101,11 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-				
+	/**
+	 * metodo para poder leer el último registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */			
 	@FXML public void verUltimoMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -114,7 +119,10 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-				
+	 /** metodo para poder leer el anterior registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */			
 	@FXML public void verAnteriorMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -128,7 +136,10 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder leer el siguiente registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */				
 	@FXML public void verSiguienteMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -143,7 +154,10 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la busqueda de material a partir de la lista de materiales del combobox
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */				
 	@FXML public void buscarMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -157,7 +171,10 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la busqueda de material por un nombre especifico
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */				
 	@FXML public void buscarNombre(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -171,7 +188,10 @@ public class ControladorBajaMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar una nueva busqueda de material.
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */				
 	@FXML public void nuevaBusqueda(ActionEvent event) throws SQLException  {
 		
 		//limpiamos los campos
@@ -208,7 +228,7 @@ public class ControladorBajaMaterial {
 	/**
 	 * metodo para iniciar el proceso de insertar datos en la BBDD
 	 * una vez comprobado que todos los campos del formulario son correctos
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void leerDatos(String metodo) throws SQLException {
 		
@@ -240,7 +260,7 @@ public class ControladorBajaMaterial {
 	 
 	/**
 	 * metodo con las sentencia sql para poder consultar datos del cliente en la BBDD
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void buscarObjeto() throws SQLException {
 		
@@ -381,12 +401,13 @@ public class ControladorBajaMaterial {
 //*******************************************************************************************************************************************************
 
 	/**
-	 * metodo para iniciar el borrado de un cliente en la BBDD
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException 
+	 * metodo para iniciar el borrado de un material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	@FXML public void borrarMaterial(ActionEvent event) throws SQLException {
 		
+		//usamos el metodo alert de JavaFx para confirmar el borrado del material
 		Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
 		alert.setHeaderText(null);
 		alert.setTitle("Confirmar Borrado");
@@ -401,11 +422,12 @@ public class ControladorBajaMaterial {
 //*******************************************************************************************************************************************************
 
 	/**
-	 * metodo para el borrado de un cliente en la BBDD
-	 * @throws SQLException
+	 * metodo para el borrado de un material en la BBDD
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	private void borrarDatos() throws SQLException {
 		
+		//llamada al metodo de la interfaz con el formato de la instrucción de borrado
 		BaseDatos.borrar("DELETE FROM material where IDMaterial = '" + claves.get(indice) + "';");
 		
 		//limpiamos la pantalla

@@ -17,13 +17,18 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * clase para controlar la escena de modificación de material
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class ControladorModificarMaterial {
 	
 	//variables locales
-    private static String btnId = null;
-    private static ArrayList<String> claves = new ArrayList<String>();
-    ArrayList<String> datosOriginales = new ArrayList<String>();
-    private int indice = 0;
+    private static String btnId = null;									//para almacenar el id del botón pulsado
+    private static ArrayList<String> claves = new ArrayList<String>();  //almcena las primary key de materiales. Será el indice
+    ArrayList<String> datosOriginales = new ArrayList<String>();        //array con los datos originales de los campos
+    private int indice = 0;                                             //para controlar la posicion del indice
 	
 	//variables formulario
 	@FXML private TextField tfIdMaterial;
@@ -48,9 +53,9 @@ public class ControladorModificarMaterial {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 		
-	/*
+	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
-	 * @throws SQLException 
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	
 	@FXML public void initialize() throws SQLException {
@@ -82,14 +87,11 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-			
-	@FXML public void elegirTipoMaterial(ActionEvent event)  {
-			
-	}
-	
-//*******************************************************************************************************************************************************
-//*******************************************************************************************************************************************************
-				
+	/**
+	 * metodo para poder leer el primer registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */				
 	@FXML public void verPrimerMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -103,7 +105,11 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-				
+	/**
+	 * metodo para poder leer el último registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */			
 	@FXML public void verUltimoMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -117,7 +123,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-				
+	/** metodo para poder leer el anterior registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */			
 	@FXML public void verAnteriorMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -131,7 +140,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder leer el siguiente registro de la tabla material en la BBDD
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void verSiguienteMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -146,7 +158,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la busqueda de material a partir de la lista de materiales del combobox
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void buscarMaterial(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -160,7 +175,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la busqueda de material por un nombre especifico
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void buscarNombre(ActionEvent event) throws SQLException  {
 		
 		//recogemos el id del boton
@@ -174,7 +192,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la comprobación de que haya algún campo modificado
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void modificarMaterial(ActionEvent event) throws SQLException  {
 		
 		//variables locales
@@ -191,7 +212,10 @@ public class ControladorModificarMaterial {
 	
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar la comprobación de que los campos estén correctos y recalcular valores
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void recalcularCampos(ActionEvent event) throws SQLException  {
 		
 		//variables locales
@@ -225,22 +249,29 @@ public class ControladorModificarMaterial {
 
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
+	/**
+	 * metodo para calcular el precio final del material
+	 */	
+	private void calcularPrecioFinal() {
+	
+		//operaciones para calcular el precio final del producto a partir del del precio de coste y el iva
+		double precioOrigen = Double.parseDouble(tfPrecioCosteMaterial.getText().toString());
+		double porcentajeIncremento = Double.parseDouble(tfPorcentajeIncremento.getText().toString());
+		double totalIncremento = precioOrigen * porcentajeIncremento / 100;
+		double precioFinal = precioOrigen + totalIncremento;
 		
-private void calcularPrecioFinal() {
-	
-	double precioOrigen = Double.parseDouble(tfPrecioCosteMaterial.getText().toString());
-	double porcentajeIncremento = Double.parseDouble(tfPorcentajeIncremento.getText().toString());
-	double totalIncremento = precioOrigen * porcentajeIncremento / 100;
-	double precioFinal = precioOrigen + totalIncremento;
-	
-	tfIncrementoMaterial.setText(String.format("%.2f", totalIncremento));
-	tfPrecioUnitarioMaterial.setText(String.format("%.2f", precioFinal));
+		//se muestra en pantalla el valor del incremento del iva y el valor del precio final
+		tfIncrementoMaterial.setText(String.format("%.2f", totalIncremento));
+		tfPrecioUnitarioMaterial.setText(String.format("%.2f", precioFinal));
 	
 }
 
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
-					
+	/** metodo para poder iniciar una nueva busqueda de material.
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */					
 	@FXML public void nuevaBusqueda(ActionEvent event) throws SQLException  {
 		
 		//limpiamos los campos
@@ -278,7 +309,7 @@ private void calcularPrecioFinal() {
 	/**
 	 * metodo para iniciar el proceso de insertar datos en la BBDD
 	 * una vez comprobado que todos los campos del formulario son correctos
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void leerDatos(String metodo) throws SQLException {
 		
@@ -307,7 +338,10 @@ private void calcularPrecioFinal() {
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
 
-	 
+	/**
+	 * metodo para realizar la operacion UPDATE en la BBDD
+	 * @throws SQLException control de excepciones SQL
+	 */
 	private void modificarObjeto() throws SQLException {
 		
 		//creamos la cadena con la consulta
@@ -339,8 +373,8 @@ private void calcularPrecioFinal() {
 
 
 	/**
-	 * metodo con las sentencia sql para poder consultar datos del cliente en la BBDD
-	 * @throws SQLException
+	 * metodo con las sentencia sql para poder consultar datos del material en la BBDD
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void buscarObjeto() throws SQLException {
 		
@@ -513,7 +547,7 @@ private void calcularPrecioFinal() {
 
 	/**
 	 * metodo para comprobar si se han realizado cambios en algun campo
-	 * @return
+	 * @return un valor booleano que indica si han habido cambios en los campos
 	 */
 	private boolean comprobarCambios() {
 		

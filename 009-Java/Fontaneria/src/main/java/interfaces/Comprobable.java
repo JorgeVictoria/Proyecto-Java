@@ -100,7 +100,7 @@ public interface Comprobable {
 
 	/**
 	 * metodo para comprobar que el campo Codigo Postal cumple un patrón correcto
-	 * @param cPostal, dirección del cliente
+	 * @param cPostal dirección del cliente
 	 * @return true or false, en funcion de si se cumple el patrón
 	 */
 	public static boolean comprobarCodigoPostal(String cPostal) {
@@ -118,7 +118,7 @@ public interface Comprobable {
 
 	/**
 	 * metodo para comprobar que el campo Email cumple un patrón correcto
-	 * @param email, direccion de correcto electronico del cliente
+	 * @param email direccion de correcto electronico del cliente
 	 * @return true or false, en funcion de si se cumple el patrón
 	 */
 	public static boolean comprobarEmail(String email) {
@@ -136,8 +136,8 @@ public interface Comprobable {
 
 	/**
 	 * metodo para comprobar que el campo teléfono cumple un patrón correcto
-	 * @param tfno, teléfono de contacto del cliente
-	 * @return true or false, en funcion de si se cumple el patrón
+	 * @param tfno teléfono de contacto del cliente
+	 * @return true or false en funcion de si se cumple el patrón
 	 */
 	public static boolean comprobarTelefono(String tfno) {
 		
@@ -154,8 +154,8 @@ public interface Comprobable {
 	
 	/**
 	 * metodo para comprobar que en algunos campos no pueda escribir mas caracteres de los permitidos
-	 * @param cantidadCaracteres, el rango de caracteres permitidos
-	 * @return, el texto con el numero de caracteres correspondiente
+	 * @param cantidadCaracteres el rango de caracteres permitidos
+	 * @return el texto con el numero de caracteres correspondiente
 	 */
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public static TextFormatter getFormatter(String cantidadCaracteres) {

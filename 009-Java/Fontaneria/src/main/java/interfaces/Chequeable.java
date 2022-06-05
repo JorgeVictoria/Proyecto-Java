@@ -4,8 +4,29 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
+/**
+ * clase de tipo interfaz para comprobar el formato de los datos introducidos en los campos
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public interface Chequeable {
 	
+	/**
+	 * metodo para comprobar que los datos del cliente sean correctos
+	 * recibe todos los datos del cliente
+	 * @param lblWarning es la etiqueta del formulario donde se mostrarán los errores
+	 * @param tfDNI
+	 * @param tfNombreCliente
+	 * @param tfApellido1
+	 * @param tfApellido2
+	 * @param tfDireccion
+	 * @param tfCPostal
+	 * @param tfLocalidad
+	 * @param tfProvincia
+	 * @param tfEmail
+	 * @param tfTelefono
+	 * @return un valor booleano con el resultado de la comprobacion
+	 */
 	public static boolean chequeaCliente(Label lblWarning, TextField tfDNI, TextField tfNombreCliente, TextField tfApellido1, TextField tfApellido2, TextField tfDireccion, TextField tfCPostal, TextField tfLocalidad, TextField tfProvincia, TextField tfEmail, TextField tfTelefono) {
 		
 		//variables locales
@@ -110,6 +131,12 @@ public interface Chequeable {
 		
 	}
 
+	/**
+	 * metodo para chequear que el campo dni tenga el formato correcto
+	 * @param lblWarning es la etiqueta del formulario donde se mostrarán los errores
+	 * @param tfDNI
+	 * @return un valor booleano con el resultado de la comprobacion
+	 */
 	public static boolean chequearDni(Label lblWarning, TextField tfDNI) {
 		
 		//variables locales
@@ -141,6 +168,14 @@ public interface Chequeable {
 		
 	}
 
+	/**
+	 * metodo para comprobar que el nombre y apellidos del cliente sean correctos
+	 * @param lblWarning es la etiqueta del formulario donde se mostrarán los errores
+	 * @param tfNombreCliente
+	 * @param tfApellido1
+	 * @param tfApellido2
+	 * @return un valor booleano con el resultado de la comprobacion
+	 */
 	public static boolean chequearNombreApellidos(Label lblWarning, TextField tfNombreCliente, TextField tfApellido1,TextField tfApellido2) {
 		
 		//variables locales
@@ -181,6 +216,16 @@ public interface Chequeable {
 		return correcto;
 	}
 
+	/**
+	 * metodo para comprobar que los datos del formulario de alta de material sean correctos
+	 * @param lblWarning es la etiqueta del formulario donde se mostrarán los errores
+	 * @param claseMaterial
+	 * @param tfNombreMaterial
+	 * @param tfPrecioCosteMaterial
+	 * @param tfPorcentajeIncrementoMaterial
+	 * @param taDescripcionMaterial
+	 * @return un valor booleano con el resultado de la comprobacion
+	 */
 	public static boolean chequeaMaterial(Label lblWarning, String claseMaterial, TextField tfNombreMaterial, TextField tfPrecioCosteMaterial, TextField tfPorcentajeIncrementoMaterial, TextArea taDescripcionMaterial) {
 		
 		//variables locales

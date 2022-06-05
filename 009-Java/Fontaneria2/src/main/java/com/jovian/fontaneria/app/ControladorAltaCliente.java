@@ -1,12 +1,12 @@
 package com.jovian.fontaneria.app;
 
 import java.net.URL;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 import interfaces.BaseDatos;
 import interfaces.Chequeable;
 import interfaces.Comprobable;
-import interfaces.Fichero;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -52,7 +52,12 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		lblWarning.setText("Rellene todos los campos para dar de alta un nuevo cliente");
 		
 		//debemos obtener un numero de cliente
-		numCliente = Fichero.obtenerIdCliente();
+		try {
+			numCliente = String.valueOf(obtenerIdCliente());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("numCliente" + numCliente);
 		tfIDCliente.setText("C." + numCliente);
 		
@@ -96,11 +101,12 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 	/**
 	 * metodo para limpiar los campos del formulario de alta de clientes
 	 * @param event, recoge el evento de click del boton nuevo cliente
+	 * @throws SQLException 
 	 */
-	@FXML public void nuevoCliente(ActionEvent event) {
+	@FXML public void nuevoCliente(ActionEvent event) throws SQLException {
 		
 		//obtenemos el nuevo id del cliente
-		numCliente = Fichero.obtenerIdCliente();
+		numCliente = String.valueOf(obtenerIdCliente());
 		tfIDCliente.setText("C." + numCliente);
 		System.out.println("numCliente" + numCliente);
 		
@@ -169,7 +175,7 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 				lblWarning.setText("cliente Introducido");
 				
 				//aumentamos el id del cliente
-				Fichero.aumentarNumCliente(numCliente);
+				//Fichero.aumentarNumCliente(numCliente);
 				
 				//deshabilitamos el boton dar de alta para no poder insertar el mismo cliente
 				btnDarAlta.setDisable(true);
@@ -193,5 +199,62 @@ public class ControladorAltaCliente implements Initializable, Comprobable {
 		}
 		
 	}
+	
+	//*******************************************************************************************************************************************************
+    //*******************************************************************************************************************************************************
+	  /**
+	   * metodo para obtener el codigo de cliente
+	   * @return un numero entero que corresponde con el valor del ultimo cliente +1
+	   * @throws SQLException
+	   */
+      public int obtenerIdCliente() throws SQLException {
+    	  
+    	//variables locales
+    	boolean conectado = false;	//para controlar que estamos conectados a la BBDD
+    	String cliente = "";
+    	int num;
+    		
+    	//intentamos la conexion a la BBDD
+		try {
+			//llamada a la funcion de conexion
+			conectado = BaseDatos.conectarBBDD();
+			
+			//si hay exito en la conexion,  lo indicamos y vamos llamando a las distintas funciones
+			if(conectado) {
+				System.out.println("Se ha conectado correctamente a la BBDD.");
+				
+				//construimos la consulta
+				String sql = "SELECT * FROM cliente;";
+				
+				//lanzamos la busuqeda
+		  		ResultSet detalle = BaseDatos.buscar(sql);
+		  		
+		  	    //vamos a almacenar los datos en el arraylist
+		  		while(detalle.next()) {
+		  			cliente = detalle.getString(2);
+		  		}
+		  			
+		  		
+		  
+				
+			}
+			//control de excepciones en caso de error durante la conexion.
+		} catch (SQLException e) {
+			lblWarning.setText("No se ha conectado a la BBDD.");
+			e.printStackTrace();
+		}
+		
+		if(cliente.isBlank() || cliente.isEmpty()) num = 1;
+		else {
+			num = Integer.valueOf(cliente.substring(2));
+			num++;
+		}
+		
+		System.out.println(cliente);
+		
+		return num;
+  		
+  	}
+		
 	
 }

@@ -751,6 +751,10 @@ public class ControladorCrearDocumento {
 
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
+	/**
+	 * metodo para crear el numero de factura
+	 * @return el numero de factura
+	 */
 	private String crearNumFactura() {
 	
 			if(Integer.valueOf(lblNumPresupuesto.getText()) < 10) {
@@ -762,6 +766,10 @@ public class ControladorCrearDocumento {
 
 //*******************************************************************************************************************************************************
 //*******************************************************************************************************************************************************
+	/**
+	 * metodo para crear el numero de albaran
+	 * @return el numero de albaran
+	 */
 	private String crearNumAlbaran() {
 		
 		if(Integer.valueOf(lblNumPresupuesto.getText()) < 10) {

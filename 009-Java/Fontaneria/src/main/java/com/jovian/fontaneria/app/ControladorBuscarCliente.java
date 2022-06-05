@@ -27,9 +27,9 @@ import javafx.util.Callback;
 public class ControladorBuscarCliente {
 	
 	//variables locales
-    private static String btnId = null;
-    private static ArrayList<String> claves = new ArrayList<String>();
-    private int indice = 0;
+    private static String btnId = null;									//para almacenar el id del botón pulsado
+    private static ArrayList<String> claves = new ArrayList<String>();  //almcena las primary key de materiales. Será el indice
+    private int indice = 0;												//para controlar la posicion del indice
 	
 	//variables formulario
 	@FXML private TextField tfIDCliente;
@@ -58,7 +58,7 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * metodo para inicializar listeners u otras opciones al cargar esta scene
-	 * @throws SQLException 
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	
 	@FXML public void initialize() throws SQLException {
@@ -90,8 +90,8 @@ public class ControladorBuscarCliente {
 
 	/**
 	 * funcion que sirve para poder iniciar la busqueda de un cliente por su dni
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
 	 */
 	@FXML public void comprobarBusquedaDni(ActionEvent event) throws SQLException {
 		
@@ -119,8 +119,8 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * funcion que sirve para poder iniciar la busqueda de un cliente por su nombre y apellidos
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
 	 */
 	@FXML public void comprobarBusquedaNombre(ActionEvent event) throws SQLException {
 		
@@ -148,7 +148,7 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * metodo para limpiar todos los campos del formulario y poder realizar una nueva busqueda
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
 	 */
 	@FXML public void CrearNuevaBusqueda(ActionEvent event) {
 		
@@ -180,7 +180,7 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * metodo que mostrará una ventana donde se podrán introducir algunos campos para la busqueda de datos
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
 	 */
 	@FXML public void introducirCampos(ActionEvent event) {
 		
@@ -272,7 +272,7 @@ public class ControladorBuscarCliente {
 	/**
 	 * metodo para iniciar el proceso de insertar datos en la BBDD
 	 * una vez comprobado que todos los campos del formulario son correctos
-	 * @throws SQLException
+	 * @throws SQLException, control de excepciones SQL
 	 */
 	private void leerDatos() throws SQLException {
 		
@@ -303,7 +303,7 @@ public class ControladorBuscarCliente {
  
 	/**
 	 * metodo con las sentencia sql para poder consultar datos del cliente en la BBDD
-	 * @throws SQLException
+	 * @throws SQLException control de excepciones SQL
 	 */
 	private void buscarCliente() throws SQLException {
 		
@@ -404,8 +404,8 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * metodo para poder leer el primer registro de la tabla clientes en la BBDD
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException 
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL
 	 */
 	@FXML public void buscarPrimerCliente(ActionEvent event) throws SQLException {
 		
@@ -424,8 +424,8 @@ public class ControladorBuscarCliente {
 	
 	/**
 	 * metodo para poder leer el anterior registro de la tabla clientes en la BBDD
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException 
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	@FXML public void buscarAnteriorCliente(ActionEvent event) throws SQLException {
 		
@@ -442,8 +442,8 @@ public class ControladorBuscarCliente {
 
 	/**
 	 * metodo para poder leer el posterior registro de la tabla clientes en la BBDD
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException 
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	@FXML public void buscarPosteriorCliente(ActionEvent event) throws SQLException {
 		
@@ -460,8 +460,8 @@ public class ControladorBuscarCliente {
 
 	/**
 	 * metodo para poder leer el primer registro de la tabla clientes en la BBDD
-	 * @param event, recoge el evento al hacer click sobre el botón correspondiente
-	 * @throws SQLException 
+	 * @param event recoge el evento al hacer click sobre el botón correspondiente
+	 * @throws SQLException control de excepciones SQL 
 	 */
 	@FXML public void buscarUltimoCliente(ActionEvent event) throws SQLException {
 		

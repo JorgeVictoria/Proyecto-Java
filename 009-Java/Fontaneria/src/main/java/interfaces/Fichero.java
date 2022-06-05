@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 
+/**
+ * interfaz para obtener el identificador del cliente
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public interface Fichero {
 	
 	/**
@@ -13,7 +18,7 @@ public interface Fichero {
 	 * Hay que tener en cuenta que podemos agregar y quitar clientes, 
 	 * por lo que debemos tener en cuenta que cada cliente debe tener su propio id
 	 * y no podemos usar los datos de la tabla cliente como referencia(count, size, id del ultimo cliente)
-	 * @return linea, que será el num del cliente
+	 * @return linea que será el num del cliente
 	 */
 	public static String obtenerIdCliente() {
 		
@@ -55,7 +60,6 @@ public interface Fichero {
 	/**
 	 * metodo para aumentar el num identificador del cliente
 	 * Y guardarlo en el fichero
-	 * @return 
 	 */
 	public static void aumentarNumCliente(String numCliente) {
 		

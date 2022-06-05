@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.sql.Statement;
 
+/**
+ * clase de tipo interfaz para las operaciones DML contra la BBDD
+ * @author Jorge Victoria Andreu
+ * @version 1.0
+ */
 public class BaseDatos {
 	
 	//variables para la conexion a la BBD
@@ -18,8 +23,8 @@ public class BaseDatos {
 	
 	/**
 	 * metodo que realiza la conexion a la BBDD
-	 * @return true/false : en funcion de si hemos conectado o no
-	 * @throws SQLException
+	 * @return true/false en funcion de si hemos conectado o no
+	 * @throws SQLException control de excepciones SQL
 	 */
 	public static boolean conectarBBDD() throws SQLException {
 		//intentamos la conexion
@@ -30,9 +35,9 @@ public class BaseDatos {
 	}
 	
 	/**
-	 * metodo con la sentencia sql para poder insertar datos del cliente en la BBDD
-	 * @return 
-	 * @throws SQLException
+	 * metodo con la sentencia sql para poder insertar datos en la BBDD
+	 * @return un valor booleano en funcion de si he han insertado los datos correctamente
+	 * @throws SQLException control de excepciones SQL
 	 */
 	public static boolean insertar(String sql) throws SQLException {
 		
@@ -61,6 +66,12 @@ public class BaseDatos {
 		
 	}
 	
+	/**
+	 * metodo para la busqueda mediante SELECT en la BBDD
+	 * @param sql cadena SELECT para la busqueda
+	 * @return el valor que produce la consulta
+	 * @throws SQLException control de excepciones SQL
+	 */
 	public static ResultSet buscar(String sql) throws SQLException {
 		
 		//creamos el statement para poder realizar la consulta
@@ -71,6 +82,12 @@ public class BaseDatos {
 		
 	}
 	
+	/**
+	 * metodo para la modificacion de datos en la BBDD
+	 * @param sql cadena con el UPDATE correspondiente
+	 * @return resultado del UPDATE
+	 * @throws SQLException control de excepciones SQL
+	 */
 	public static PreparedStatement modificar(String sql) throws SQLException {
 		
 		//creamos el statement para poder realizar la consulta
@@ -81,6 +98,11 @@ public class BaseDatos {
 		
 	}
 
+	/**
+	 * metodo para el borrado de datos en la BBDD
+	 * @param sql cadena con el DELETE correspondiente
+	 * @throws SQLException control de excepciones SQL
+	 */
 	public static void borrar(String sql) throws SQLException {
 		
 		//creamos el statement para poder realizar la consulta

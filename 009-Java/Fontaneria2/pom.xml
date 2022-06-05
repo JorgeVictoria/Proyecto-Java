@@ -26,6 +26,11 @@
 		    <artifactId>mariadb-java-client</artifactId>
 		    <version>3.0.4</version>
 		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.27</version>       
+		</dependency>
     </dependencies>
     <build>
         <plugins>
@@ -61,6 +66,9 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>com.jovian.fontaneria.app.App</mainClass>
+                            <launcher>App</launcher>
+                            <jlinkImageName>fontaneria</jlinkImageName>
+                            <jlinkZipName>fontaneriaZip</jlinkZipName>
                         </configuration>
                     </execution>
                 </executions>
